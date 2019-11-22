@@ -20,6 +20,11 @@ nnoremap <leader>z :wa!<cr>
 filetype plugin indent on
 syntax enable
 
+" f90
+let fortran_free_source = 1
+let fortran_more_precise = 1
+let fortran_do_enddo = 1
+
 " vim-plug
 call plug#begin(stdpath('data').'/plugged')
 Plug 'junegunn/fzf',{'dir':'~/.fzf','do':'./install --all'}
@@ -35,6 +40,7 @@ Plug 'altercation/vim-colors-solarized'
 Plug 'lervag/vimtex'
 Plug 'scrooloose/nerdcommenter'
 Plug 'itchyny/lightline.vim'
+Plug 'tpope/vim-endwise'
 call plug#end()
 
 " nerdtree
