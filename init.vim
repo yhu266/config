@@ -9,6 +9,7 @@ set ignorecase
 set wildignorecase
 set fileignorecase
 
+" key binding
 map , <leader>
 inoremap jk <esc>zz:w<cr>
 nnoremap j gjzz
@@ -18,6 +19,8 @@ nnoremap <leader>z :wa!<cr>
 
 filetype plugin indent on
 syntax enable
+
+" vim-plug
 call plug#begin(stdpath('data').'/plugged')
 Plug 'junegunn/fzf',{'dir':'~/.fzf','do':'./install --all'}
 Plug 'tpope/vim-fugitive'
@@ -34,6 +37,7 @@ Plug 'scrooloose/nerdcommenter'
 Plug 'itchyny/lightline.vim'
 call plug#end()
 
+" nerdtree
 let NERDTreeCaseSensitiveSort = 1
 let NERDTreeBookmarksSort = 2
 let NERDTreeQuitOnOpen = 1
@@ -45,13 +49,17 @@ let NERDTreeDirArrowCollapsible = "-"
 let NERDTreeIgnore = ['.DS_Store', '.localized']
 nnoremap <leader>n :NERDTreeToggle<cr>
 
+" solarized
 set background=light
 colorscheme solarized
 
+" vimtex
 let g:tex_flavor  = 'latex'
 
+" nerdcommenter
 let g:NERDSpaceDelims = 1
 
+" lightline
 let g:lightline = {
   \ 'colorscheme': 'solarized'
   \ }
