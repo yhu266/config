@@ -71,3 +71,6 @@ let g:NERDSpaceDelims = 1
 let g:lightline = {
   \ 'colorscheme': 'solarized'
   \ }
+
+" vim-gitgutter
+set updatetime=100
