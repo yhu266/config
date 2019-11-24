@@ -69,7 +69,31 @@ let g:NERDSpaceDelims = 1
 
 " lightline
 let g:lightline = {
-  \ 'colorscheme': 'solarized'
+  \ 'colorscheme': 'solarized',
+  \ 'active': {
+  \   'left': [ [ 'mode', 'paste', ],
+  \             [ 'filename', ],
+  \             [ 'readonly', 'modified', ], ],
+  \   'right': [ [ 'git_branch', ],
+  \              [ 'filetype', ],
+  \              [ 'fileencoding', ], ], },
+  \ 'inactive': {
+  \   'left': [ [ 'filename', ], ],
+  \   'right': [ [ 'git_branch', ], ], },
+  \ 'component_function': {
+  \   'git_branch': 'FugitiveHead', },
+  \ 'mode_map': {
+  \   'n': 'N',
+  \   'i': 'I',
+  \   'R': 'R',
+  \   'v': 'V',
+  \   'V': 'VL',
+  \   "\<C-v>": 'VB',
+  \   'c': 'C',
+  \   's': 'S',
+  \   'S': 'SL',
+  \   "\<C-s>": 'SB',
+  \   't': 'T', },
   \ }
 
 " vim-gitgutter
