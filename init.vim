@@ -8,6 +8,7 @@ set wildignore=*.o,*.swp,.git/,.DS_Store,.localized
 set ignorecase
 set wildignorecase
 set fileignorecase
+set nofoldenable
 
 " key binding
 map , <leader>
@@ -41,6 +42,7 @@ Plug 'lervag/vimtex'
 Plug 'scrooloose/nerdcommenter'
 Plug 'itchyny/lightline.vim'
 Plug 'tpope/vim-endwise'
+Plug 'airblade/vim-gitgutter'
 call plug#end()
 
 " nerdtree
