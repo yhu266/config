@@ -33,10 +33,9 @@ Plug 'tpope/vim-fugitive'
 Plug 'easymotion/vim-easymotion'
 Plug 'scrooloose/nerdtree'
 Plug 'ervandew/supertab'
-Plug 'MarcWeber/vim-addon-mw-utils'
-Plug 'tomtom/tlib_vim'
-Plug 'garbas/vim-snipmate'
+Plug 'SirVer/ultisnips'
 Plug 'honza/vim-snippets'
+Plug 'yhu266/vim-fortran-snippets'
 Plug 'altercation/vim-colors-solarized'
 Plug 'lervag/vimtex'
 Plug 'scrooloose/nerdcommenter'
@@ -57,7 +56,11 @@ let NERDTreeDirArrowCollapsible = "-"
 let NERDTreeIgnore = ['.DS_Store', '.localized']
 nnoremap <leader>n :NERDTreeToggle<cr>
 
-" solarized
+" ultisnips
+let g:UltiSnipsEnableSnipMate = 0
+let g:UltiSnipsExpandTrigger = "<tab>"
+
+" vim-colors-solarized
 set background=light
 colorscheme solarized
 
