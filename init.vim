@@ -60,7 +60,6 @@ let NERDTreeIgnore = ['.DS_Store', '.localized']
 
 " ultisnips
 let g:UltiSnipsEnableSnipMate = 0
-" let g:UltiSnipsExpandTrigger = "<tab>"
 
 " vim-colors-solarized
 set background=light
