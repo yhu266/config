@@ -18,6 +18,7 @@ nnoremap j gjzz
 nnoremap k gkzz
 nnoremap <leader><space> :nohlsearch<cr>
 nnoremap <leader>z :wa!<cr>
+nnoremap <leader>q :wq!<cr>
 
 filetype plugin indent on
 syntax enable
