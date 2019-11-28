@@ -79,12 +79,12 @@ let g:lightline = {
   \ 'active': {
   \   'left': [ [ 'mode', 'paste', ],
   \             [ 'git_branch', ],
-  \             [ 'filename', 'readonly', 'modified', ], ],
+  \             [ 'relativepath', 'readonly', 'modified', ], ],
   \   'right': [ [ 'lineinfo', ],
   \              [ 'fileencoding', ],
   \              [ 'filetype', ], ], },
   \ 'inactive': {
-  \   'left': [ [ 'filename', ], ],
+  \   'left': [ [ 'relativepath', 'readonly', 'modified', ], ],
   \   'right': [ [ 'fileencoding', ],
   \              [ 'filetype', ], ], },
   \ 'component_function': {
