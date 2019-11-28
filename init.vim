@@ -24,7 +24,7 @@ filetype plugin indent on
 syntax enable
 
 " f90
-let fortran_free_source = 1
+au BufEnter,BufNew *.f90 let fortran_free_source = 1
 let fortran_more_precise = 1
 let fortran_do_enddo = 1
 
