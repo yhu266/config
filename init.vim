@@ -1,4 +1,4 @@
-set number
+set number relativenumber
 set guicursor=a:block,a:blinkon1
 set expandtab
 set tabstop=2
@@ -18,7 +18,7 @@ nnoremap j gjzz
 nnoremap k gkzz
 nnoremap <leader><space> :nohlsearch<cr>
 nnoremap <leader>z :wa!<cr>
-nnoremap <leader>q :wq!<cr>
+nnoremap <leader>q :q<cr>
 
 filetype plugin indent on
 syntax enable
@@ -35,14 +35,15 @@ Plug 'easymotion/vim-easymotion'
 Plug 'scrooloose/nerdtree'
 Plug 'ervandew/supertab'
 Plug 'SirVer/ultisnips'
-Plug 'honza/vim-snippets'
+" Plug 'honza/vim-snippets'
+Plug 'yhu266/vim-snippets', { 'branch': 'fortran-extra' }
+Plug 'yhu266/vim-fortran-snippets'
 Plug 'altercation/vim-colors-solarized'
 Plug 'lervag/vimtex'
 Plug 'scrooloose/nerdcommenter'
 Plug 'itchyny/lightline.vim'
 Plug 'tpope/vim-endwise'
 Plug 'airblade/vim-gitgutter'
-Plug 'yhu266/vim-fortran-snippets'
 Plug 'mileszs/ack.vim'
 Plug 'ctrlpvim/ctrlp.vim'
 call plug#end()
