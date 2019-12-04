@@ -1,8 +1,8 @@
 set number relativenumber
 set guicursor=a:block,a:blinkon1
 set expandtab
-set tabstop=4
-set shiftwidth=4
+set tabstop=2
+set shiftwidth=2
 set wrap linebreak
 set wildmode=list:longest,full
 set wildignore=*.o,*.swp,.git/,.DS_Store,.localized
@@ -38,7 +38,7 @@ Plug 'scrooloose/nerdtree'
 Plug 'ervandew/supertab'
 Plug 'SirVer/ultisnips'
 "Plug 'honza/vim-snippets'
-Plug 'yhu266/vim-snippets', { 'branch': 'fortran-extra' }
+"Plug 'yhu266/vim-snippets', { 'branch': 'fortran-extra' }
 "Plug 'yhu266/vim-fortran-snippets'
 Plug '~/Documents/GitHub/vim-fortran-snippets'
 Plug 'altercation/vim-colors-solarized'
@@ -76,8 +76,8 @@ let g:tex_flavor  = 'latex'
 "nerdcommenter
 let g:NERDCustomDelimiters = {
     \ 'fortran': {
-    \   'left': 'c   ',
-    \   'leftAlt': 'c>  ',
+    \   'left': '!!',
+    \   'leftAlt': '!>',
     \   'right': '',
     \   'rightAlt': '', },
     \ }
