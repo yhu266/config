@@ -30,6 +30,10 @@ let fortran_do_enddo = 1
 au BufEnter,BufNew *.f let fortran_fixed_source = 1
 au BufEnter,BufNew *.f90 let fortran_free_source = 1
 
+"jump to last position
+au BufReadPost * if line("'\"") > 1 && line("'\"") <= line("$") |
+      \ exe "normal! g'\"" | endif
+
 "vim-plug
 call plug#begin(stdpath('data').'/plugged')
 Plug 'tpope/vim-fugitive'
@@ -40,6 +44,7 @@ Plug 'SirVer/ultisnips'
 Plug 'honza/vim-snippets'
 "Plug 'yhu266/vim-snippets', { 'branch': 'fortran-extra' }
 Plug 'yhu266/vim-fortran-snippets'
+Plug '~/Documents/GitHub/vim-tex-snippets'
 Plug 'altercation/vim-colors-solarized'
 Plug 'lervag/vimtex'
 Plug 'scrooloose/nerdcommenter'
@@ -64,13 +69,13 @@ let NERDTreeIgnore = ['.DS_Store', '.localized']
 
 "ultisnips
 let g:UltiSnipsEnableSnipMate = 0
-let g:snips_author = 'Yifan Hu'
 
 "vim-colors-solarized
 colorscheme solarized
 
 "vimtex
 let g:tex_flavor  = 'latex'
+let g:vimtex_quickfix_open_on_warning = 0
 
 "nerdcommenter
 let g:NERDCustomDelimiters = {
