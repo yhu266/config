@@ -1,10 +1,19 @@
-# prompt
-PS1='%2~ > '
-
 # autocomplete
 autoload -Uz compinit
 compinit
 zstyle ':completion:*' matcher-list 'm:{a-z}={A-Za-z}'
+
+# git
+autoload -Uz vcs_info
+zstyle ':vcs_info:*' enable git svn
+precmd() {
+  vcs_info
+}
+setopt prompt_subst
+zstyle ':vcs_info:git*' formats '[%b] '
+
+# prompt
+PROMPT='${vcs_info_msg_0_}%2~ > '
 
 # alias
 alias l='ls -alG'
@@ -26,4 +35,5 @@ CPPFLAGS="-I/usr/local/opt/ruby/include"
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
 
 # highlight
-source /usr/local/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
+source /usr/local/share/zsh-syntax-highlighting/\
+  zsh-syntax-highlighting.zsh
