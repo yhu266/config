@@ -21,6 +21,7 @@ alias clc='clear'
 alias v='nvim'
 alias vg='nvim +Git'
 alias matlab='matlab -nosplash -nodesktop'
+alias stext='subl'
 
 # environment variables
 PATH=/usr/local/bin:$PATH
@@ -36,4 +37,4 @@ CPPFLAGS="-I/usr/local/opt/ruby/include"
 
 # highlight
 source /usr/local/share/zsh-syntax-highlighting/\
-  zsh-syntax-highlighting.zsh
+zsh-syntax-highlighting.zsh
