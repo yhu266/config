@@ -3,17 +3,8 @@ autoload -Uz compinit
 compinit
 zstyle ':completion:*' matcher-list 'm:{a-z}={A-Za-z}'
 
-# git
-autoload -Uz vcs_info
-zstyle ':vcs_info:*' enable git svn
-precmd() {
-  vcs_info
-}
-setopt prompt_subst
-zstyle ':vcs_info:git*' formats '[%b] '
-
 # prompt
-PROMPT='${vcs_info_msg_0_}%2~ > '
+PROMPT='%2~ > '
 
 # alias
 alias l='ls -alG'
