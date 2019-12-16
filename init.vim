@@ -53,6 +53,7 @@ Plug 'tpope/vim-endwise'
 Plug 'airblade/vim-gitgutter'
 Plug 'mileszs/ack.vim'
 Plug 'ctrlpvim/ctrlp.vim'
+Plug 'tmux-plugins/vim-tmux'
 call plug#end()
 
 "nerdtree
