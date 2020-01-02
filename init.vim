@@ -1,8 +1,8 @@
 set number relativenumber
 set guicursor=a:block,a:blinkon1
 set expandtab
-set tabstop=2
-set shiftwidth=2
+set tabstop=4
+set shiftwidth=4
 set wrap linebreak
 set wildmode=list:longest,full
 set wildignore=*.o,*.swp,.git/,.DS_Store,.localized
