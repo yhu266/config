@@ -30,7 +30,7 @@ let fortran_do_enddo = 1
 au BufEnter,BufNew *.f let fortran_fixed_source = 1
 au BufEnter,BufNew *.f90 let fortran_free_source = 1
 
-"jump to last position
+"jump to last cursor position
 au BufReadPost * if line("'\"") > 1 && line("'\"") <= line("$") |
       \ exe "normal! g'\"" | endif
 
@@ -42,7 +42,6 @@ Plug 'scrooloose/nerdtree'
 Plug 'ervandew/supertab'
 Plug 'SirVer/ultisnips'
 "Plug 'honza/vim-snippets'
-Plug '~/Documents/GitHub/vim-snippets'
 Plug 'yhu266/vim-fortran-snippets'
 Plug 'yhu266/vim-tex-snippets'
 Plug 'altercation/vim-colors-solarized'
