@@ -1,5 +1,27 @@
+if has('nvim')
+    set guicursor=a:block,a:blinkon1
+else
+    set autoindent
+    set background=dark
+    set nocompatible
+    set complete-=i
+    set cscopeverbose
+    set encoding=utf-8
+    set history=10000
+    set hlsearch
+    set incsearch
+    set langnoremap
+    set laststatus=2
+    set ruler
+    set showcmd
+    set sidescroll=1
+    set smarttab
+    set ttyfast
+    set wildmenu
+    set wildoptions="pum,tagfile"
+endif
+
 set number relativenumber
-set guicursor=a:block,a:blinkon1
 set expandtab
 set tabstop=4
 set shiftwidth=4
@@ -32,27 +54,36 @@ au BufEnter,BufNew *.f90 let fortran_free_source = 1
 
 "jump to last cursor position
 au BufReadPost * if line("'\"") > 1 && line("'\"") <= line("$") |
-      \ exe "normal! g'\"" | endif
+    \ exe "normal! g'\"" | endif
 
 "vim-plug
-call plug#begin(stdpath('data').'/plugged')
+if has('nvim')
+    call plug#begin(stdpath('data').'/plugged')
+else
+    call plug#begin('~/.vim/plugged')
+endif
 Plug 'tpope/vim-fugitive'
 Plug 'easymotion/vim-easymotion'
 Plug 'scrooloose/nerdtree'
 Plug 'ervandew/supertab'
-Plug 'SirVer/ultisnips'
-"Plug 'honza/vim-snippets'
 Plug 'yhu266/vim-fortran-snippets'
-Plug 'yhu266/vim-tex-snippets'
 Plug 'altercation/vim-colors-solarized'
-Plug 'lervag/vimtex'
 Plug 'scrooloose/nerdcommenter'
 Plug 'itchyny/lightline.vim'
 Plug 'tpope/vim-endwise'
 Plug 'airblade/vim-gitgutter'
-Plug 'mileszs/ack.vim'
 Plug 'ctrlpvim/ctrlp.vim'
-Plug 'tmux-plugins/vim-tmux'
+if has('nvim')
+    Plug 'SirVer/ultisnips'
+    Plug 'yhu266/vim-tex-snippets'
+    Plug 'lervag/vimtex'
+    Plug 'mileszs/ack.vim'
+    Plug 'tmux-plugins/vim-tmux'
+else
+    Plug 'MarcWeber/vim-addon-mw-utils'
+    Plug 'tomtom/tlib_vim'
+    Plug 'garbas/vim-snipmate'
+endif
 call plug#end()
 
 "nerdtree
@@ -70,9 +101,11 @@ let NERDTreeIgnore = ['.DS_Store', '.localized']
 "vim-colors-solarized
 colorscheme solarized
 
-"vimtex
-let g:tex_flavor  = 'latex'
-let g:vimtex_quickfix_open_on_warning = 0
+if has('nvim')
+    "vimtex
+    let g:tex_flavor  = 'latex'
+    let g:vimtex_quickfix_open_on_warning = 0
+endif
 
 "nerdcommenter
 let g:NERDCustomDelimiters = {
@@ -117,7 +150,9 @@ let g:lightline = {
 "vim-gitgutter
 set updatetime=100
 
-"ack.vim
-let g:ackprg = 'ag --vimgrep'
-cnoreabbrev Ack Ack!
-nnoremap <leader>a :Ack!<space>
+if has('nvim')
+    "ack.vim
+    let g:ackprg = 'ag --vimgrep'
+    cnoreabbrev Ack Ack!
+    nnoremap <leader>a :Ack!<space>
+endif
