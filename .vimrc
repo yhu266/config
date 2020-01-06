@@ -1,26 +1,21 @@
-if has('nvim')
-    set guicursor=a:block,a:blinkon1
-else
-    set autoindent
-    set background=dark
-    set nocompatible
-    set complete-=i
-    set cscopeverbose
-    set encoding=utf-8
-    set history=10000
-    set hlsearch
-    set incsearch
-    set langnoremap
-    set laststatus=2
-    set ruler
-    set showcmd
-    set sidescroll=1
-    set smarttab
-    set ttyfast
-    set wildmenu
-    set wildoptions="pum,tagfile"
-endif
-
+set autoindent
+set background=dark
+set nocompatible
+set complete-=i
+set cscopeverbose
+set encoding=utf-8
+set history=10000
+set hlsearch
+set incsearch
+set langnoremap
+set laststatus=2
+set ruler
+set showcmd
+set sidescroll=1
+set smarttab
+set ttyfast
+set wildmenu
+set wildoptions="pum,tagfile"
 set number relativenumber
 set expandtab
 set tabstop=4
@@ -83,7 +78,6 @@ let NERDTreeShowHidden = 1
 let NERDTreeMinimalUI = 1
 let NERDTreeDirArrowExpandable = "+"
 let NERDTreeDirArrowCollapsible = "-"
-let NERDTreeIgnore = ['.DS_Store', '.localized']
 
 "ultisnips
 let g:UltiSnipsEnableSnipMate = 0
