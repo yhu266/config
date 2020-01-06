@@ -1,4 +1,4 @@
 config
 ===
 
-`.bashrc` and `.vimrc` are for `hummingbird` only.
+`.bashrc` is for `hummingbird` only.
