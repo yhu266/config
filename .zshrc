@@ -4,7 +4,7 @@ compinit
 zstyle ':completion:*' matcher-list 'm:{a-z}={A-Za-z}'
 
 # prompt
-PROMPT='%2~ > '
+PROMPT='[%n@%m] %2~ > '
 
 # alias
 alias l='ls -alG'
