@@ -1,0 +1,67 @@
+\usepackage[utf8]{inputenc}
+\usepackage[english]{babel}
+\usepackage[margin=1in]{geometry}
+\usepackage{indentfirst}
+\usepackage{amsmath,amssymb,amsthm}
+\usepackage[nointlimits]{esint}
+\usepackage{enumitem}
+\usepackage{graphicx}
+\usepackage{float}
+\usepackage{hyperref}
+\usepackage{subfiles}
+
+% spacing between paragraphs
+\setlength\parskip{1em}
+
+% spacing in matrices
+\makeatletter
+\renewcommand*\env@matrix[1][\arraystretch]{%
+    \edef\arraystretch{#1}%
+    \hskip -\arraycolsep
+    \let\@ifnextchar\new@ifnextchar
+    \array{*\c@MaxMatrixCols c}}
+    \makeatother
+
+% auto \left( and \right)
+\makeatletter
+\def\resetMathstrut@{%
+  \setbox\z@\hbox{%
+    \mathchardef\@tempa\mathcode`\[\relax
+    \def\@tempb##1"##2##3{\the\textfont"##3\char"}%
+    \expandafter\@tempb\meaning\@tempa \relax
+  }%
+  \ht\Mathstrutbox@\ht\z@ \dp\Mathstrutbox@\dp\z@}
+\makeatother
+\begingroup
+  \catcode`(\active \xdef({\left\string(}
+  \catcode`)\active \xdef){\right\string)}
+\endgroup
+\mathcode`(="8000 \mathcode`)="8000
+
+% picture directory
+\graphicspath{ {./picture/} }
+
+% hyperlink color
+\hypersetup{
+  colorlinks=true,
+  linkcolor=blue,
+  filecolor=blue,
+  urlcolor=blue}
+\urlstyle{same}
+
+% theorems
+\newtheorem{theorem}{Theorem}[section]
+\newtheorem{lemma}{Lemma}[theorem]
+\newtheorem{corollary}{Corollary}[theorem]
+\newtheorem{proposition}{Proposition}[section]
+
+\theoremstyle{definition}
+\newtheorem{definition}{Definition}[section]
+\newtheorem{conjecture}{Conjecture}[section]
+\newtheorem{problem}{Problem}[section]
+\newtheorem{example}{Example}[section]
+
+\theoremstyle{remark}
+\newtheorem{remark}{Remark}[section]
+\newtheorem{note}{Note}[section]
+\newtheorem{case}{Case}[section]
