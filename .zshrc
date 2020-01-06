@@ -22,6 +22,3 @@ PATH=/usr/local/lib/ruby/gems/2.6.0/bin:$PATH
 PATH=/usr/local/opt/ruby/bin:$PATH
 LDFLAGS="-L/usr/local/opt/ruby/lib"
 CPPFLAGS="-I/usr/local/opt/ruby/include"
-
-# fzf
-[ -f ~/.fzf.zsh ] && source ~/.fzf.zsh

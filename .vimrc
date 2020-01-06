@@ -79,9 +79,6 @@ let NERDTreeMinimalUI = 1
 let NERDTreeDirArrowExpandable = "+"
 let NERDTreeDirArrowCollapsible = "-"
 
-"ultisnips
-let g:UltiSnipsEnableSnipMate = 0
-
 "vim-colors-solarized
 colorscheme solarized
 
