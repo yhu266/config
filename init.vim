@@ -63,6 +63,7 @@ else
     call plug#begin('~/.vim/plugged')
 endif
 Plug 'tpope/vim-fugitive'
+Plug 'tpope/vim-repeat'
 Plug 'easymotion/vim-easymotion'
 Plug 'scrooloose/nerdtree'
 Plug 'ervandew/supertab'
