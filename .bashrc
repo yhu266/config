@@ -5,7 +5,8 @@ fi
 DEFAULT=$PS1
 PS1="[\u@\h] \w > "
 
-alias l="ls -al"
+alias l="ls -a"
+alias ll="ls -al"
 alias clc="clear"
 alias v="vim"
 alias vg="vim +Git"

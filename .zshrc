@@ -7,7 +7,8 @@ zstyle ':completion:*' matcher-list 'm:{a-z}={A-Za-z}'
 PROMPT='%2~ > '
 
 # alias
-alias l='ls -alG'
+alias l='ls -aG'
+alias ll='ls -alG'
 alias clc='clear'
 alias v='nvim'
 alias vg='nvim +Git'
