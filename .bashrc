@@ -9,6 +9,6 @@ alias l="ls -al"
 alias clc="clear"
 alias v="vim"
 alias vg="vim +Git"
-alias check="squeue -p 96x24gpu4"
+alias check="squeue --user=yhu266"
 
 module restore yhu266
