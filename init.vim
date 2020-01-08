@@ -49,8 +49,8 @@ syntax enable
 "Fortran
 let fortran_more_precise = 1
 let fortran_do_enddo = 1
-au BufEnter,BufNew *.f let fortran_fixed_source = 1
-au BufEnter,BufNew *.f90 let fortran_free_source = 1
+au BufEnter,BufNew,BufRead *.f let fortran_fixed_source = 1
+au BufEnter,BufNew,BufRead *.f90 let fortran_free_source = 1
 
 "jump to last cursor position
 au BufReadPost * if line("'\"") > 1 && line("'\"") <= line("$") |
@@ -76,7 +76,8 @@ Plug 'airblade/vim-gitgutter'
 Plug 'ctrlpvim/ctrlp.vim'
 if has('nvim')
     Plug 'SirVer/ultisnips'
-    Plug 'yhu266/vim-tex-snippets'
+"    Plug 'yhu266/vim-tex-snippets'
+    Plug '~/Documents/GitHub/vim-tex-snippets'
     Plug 'lervag/vimtex'
     Plug 'mileszs/ack.vim'
     Plug 'tmux-plugins/vim-tmux'
@@ -104,21 +105,14 @@ colorscheme solarized
 
 if has('nvim')
     "vimtex
-    let g:tex_flavor  = 'latex'
+    let g:tex_flavor  = "plain"
     let g:vimtex_quickfix_open_on_warning = 0
+    au BufEnter,BufNewFile,BufRead *.tex set syntax=plaintex
+    au BufEnter,BufNewFile,BufRead *.cls set syntax=plaintex
+    au BufEnter,BufNewFile,BufRead *.sty set syntax=plaintex
 endif
 
-"nerdcommenter
-let g:NERDCustomDelimiters = {
-    \ 'fortran': {
-    \   'left': '!!',
-    \   'leftAlt': '!>',
-    \   'right': '',
-    \   'rightAlt': '', },
-    \ }
-let g:NERDDefaultAlign = 'start'
-
-"lightline
+"lightlcontext
 let g:lightline = {
     \ 'colorscheme': 'solarized',
     \ 'active': {
