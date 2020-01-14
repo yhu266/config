@@ -2,7 +2,6 @@ if has('nvim')
     set guicursor=a:block,a:blinkon1
 else
     set autoindent
-    set background=dark
     set nocompatible
     set complete-=i
     set cscopeverbose
@@ -21,6 +20,7 @@ else
     set wildoptions="pum,tagfile"
 endif
 
+set background=light
 set number relativenumber
 set expandtab
 set tabstop=4
