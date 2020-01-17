@@ -20,7 +20,7 @@ else
     set wildoptions="pum,tagfile"
 endif
 
-set background=light
+set background=dark
 set number relativenumber
 set expandtab
 set tabstop=4
