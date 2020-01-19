@@ -1,4 +1,4 @@
 config
 ===
 
-`.bashrc` is for `hummingbird` only.
+`.bashrc` and `.inputrc` are for `hummingbird` only.
