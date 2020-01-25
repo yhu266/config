@@ -76,7 +76,6 @@ Plug 'airblade/vim-gitgutter'
 Plug 'ctrlpvim/ctrlp.vim'
 if has('nvim')
     Plug 'SirVer/ultisnips'
-    Plug 'lervag/vimtex'
     Plug 'mileszs/ack.vim'
     Plug 'tmux-plugins/vim-tmux'
 else
@@ -100,15 +99,6 @@ let NERDTreeIgnore = ['.DS_Store', '.localized']
 
 "vim-colors-solarized
 colorscheme solarized
-
-if has('nvim')
-    "vimtex
-    let g:tex_flavor  = "plain"
-    let g:vimtex_quickfix_open_on_warning = 0
-    au BufEnter,BufNewFile,BufRead *.tex set syntax=plaintex
-    au BufEnter,BufNewFile,BufRead *.cls set syntax=plaintex
-    au BufEnter,BufNewFile,BufRead *.sty set syntax=plaintex
-endif
 
 "lightlcontext
 let g:lightline = {
@@ -143,8 +133,8 @@ let g:lightline = {
 "vim-gitgutter
 set updatetime=100
 
+"ack.vim
 if has('nvim')
-    "ack.vim
     let g:ackprg = 'ag --vimgrep'
     cnoreabbrev Ack Ack!
     nnoremap <leader>a :Ack!<space>
