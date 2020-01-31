@@ -4,7 +4,8 @@ compinit
 zstyle ':completion:*' matcher-list 'm:{a-z}={A-Za-z}'
 
 # prompt
-PROMPT='%2~ > '
+PS1='> '
+RPS1='%2~'
 
 # alias
 alias l='ls -aG'
