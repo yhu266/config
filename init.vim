@@ -51,6 +51,7 @@ let fortran_more_precise = 1
 let fortran_do_enddo = 1
 au BufEnter,BufNew,BufRead *.f let fortran_fixed_source = 1
 au BufEnter,BufNew,BufRead *.f90 let fortran_free_source = 1
+au BufEnter,BufNew,BufRead *.fh set ft=fortran
 
 "jump to last cursor position
 au BufReadPost * if line("'\"") > 1 && line("'\"") <= line("$") |
