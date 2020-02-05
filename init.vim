@@ -140,3 +140,7 @@ if has('nvim')
     cnoreabbrev Ack Ack!
     nnoremap <leader>a :Ack!<space>
 endif
+
+"tex
+au BufEnter,BufNew,BufRead *.tex set ft=tex
+au BufEnter,BufNew,BufRead *.sty set ft=tex
