@@ -75,6 +75,7 @@ Plug 'itchyny/lightline.vim'
 Plug 'tpope/vim-endwise'
 Plug 'airblade/vim-gitgutter'
 Plug 'ctrlpvim/ctrlp.vim'
+Plug 'nathanaelkane/vim-indent-guides'
 if has('nvim')
     Plug 'SirVer/ultisnips'
     Plug 'mileszs/ack.vim'
@@ -144,3 +145,14 @@ endif
 "tex
 au BufEnter,BufNew,BufRead *.tex set ft=tex
 au BufEnter,BufNew,BufRead *.sty set ft=tex
+
+"vim-indent-guides
+autocmd VimEnter,Colorscheme * :hi IndentGuidesOdd  guibg=0 ctermbg=0
+autocmd VimEnter,Colorscheme * :hi IndentGuidesEven guibg=0 ctermbg=0
+let g:indent_guides_enable_on_vim_startup = 1
+let g:indent_guides_guide_size = 1
+let g:indent_guides_start_level = 2
+let g:indent_guides_exclude_filetypes = ['help', 'nerdtree']
+let g:indent_guides_default_mapping = 0
+let g:indent_guides_color_change_percent = 1
+let g:indent_guides_auto_colors = 0
