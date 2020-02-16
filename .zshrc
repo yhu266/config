@@ -4,12 +4,10 @@ compinit
 zstyle ':completion:*' matcher-list 'm:{a-z}={A-Za-z}'
 
 # prompt
-PS1='> '
-RPS1='%2~'
+PS1='%2~ >> '
 
 # alias
-alias l='ls -aG'
-alias ll='ls -alG'
+alias l='ls -alG'
 alias clc='clear'
 alias v='nvim'
 alias vg='nvim +Git'
