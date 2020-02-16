@@ -25,22 +25,6 @@
     \array{*\c@MaxMatrixCols c}}
     \makeatother
 
-% auto \left( and \right)
-\makeatletter
-\def\resetMathstrut@{%
-  \setbox\z@\hbox{%
-    \mathchardef\@tempa\mathcode`\[\relax
-    \def\@tempb##1"##2##3{\the\textfont"##3\char"}%
-    \expandafter\@tempb\meaning\@tempa \relax
-  }%
-  \ht\Mathstrutbox@\ht\z@ \dp\Mathstrutbox@\dp\z@}
-\makeatother
-\begingroup
-  \catcode`(\active \xdef({\left\string(}
-  \catcode`)\active \xdef){\right\string)}
-\endgroup
-\mathcode`(="8000 \mathcode`)="8000
-
 % picture directory
 \graphicspath{ {./pic/} }
 
