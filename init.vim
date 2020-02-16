@@ -104,6 +104,14 @@ colorscheme solarized
 
 "lightlcontext
 let g:lightline = {
+    \ 'tab': {
+    \   'active': [ 'tabnum', 'filename', 'modified' ],
+    \   'inactive': [ 'tabnum', 'filename', 'modified' ],
+    \ },
+    \ 'tabline': {
+    \   'left': [ [ 'tabs' ] ],
+    \   'right': [ [ ] ],
+    \ },
     \ 'colorscheme': 'solarized',
     \ 'active': {
     \   'left': [ [ 'mode', 'paste', ],
@@ -156,3 +164,8 @@ let g:indent_guides_exclude_filetypes = ['help', 'nerdtree']
 let g:indent_guides_default_mapping = 0
 let g:indent_guides_color_change_percent = 1
 let g:indent_guides_auto_colors = 0
+
+"ctrlp.vim
+let g:ctrlp_match_window = 'max:9'
+let g:ctrlp_show_hidden = 1
+let g:ctrlp_max_depth = 9
