@@ -13,6 +13,7 @@ alias v='nvim'
 alias vg='nvim +Git'
 alias vp='nvim +CtrlP'
 alias vm='nvim -M'
+alias t='tree -C'
 alias matlab='matlab -nosplash -nodesktop'
 alias stext='subl'
 
