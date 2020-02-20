@@ -1,162 +1,188 @@
-if has('nvim')
+" tab
+set expandtab
+set tabstop=4
+set shiftwidth=4
+
+" number
+set number
+set relativenumber
+
+" line wrapping
+set wrap
+set linebreak
+set nolist
+
+" wild mode
+set wildmode=list:longest,full
+set wildignore=*.o,*.swp
+
+" editing
+set ignorecase
+set wildignorecase
+set fileignorecase
+
+" disable code folding
+set nofoldenable
+
+" background
+set background=light
+
+" key mapping
+map <Space> <Leader>
+inoremap jk <Esc>
+nnoremap j gj
+nnoremap k gk
+nnoremap <Leader><Space> :nohlsearch<Cr>
+nnoremap <Leader>w :wa!<Cr>
+nnoremap <Leader>q :q<Cr>
+nnoremap <Leader>gm :!gmake<Cr>
+nnoremap <leader>a :Ack!<space>
+
+" syntax
+filetype plugin indent on
+syntax enable
+
+" hot exit
+au BufReadPost * if line("'\"") > 1 && line("'\"") <= line("$") |
+    \ exe "normal! g'\"" | endif
+
+if has('nvim') " neovim specific setting
     set guicursor=a:block,a:blinkon1
-else
+else " vim specific setting
     set autoindent
-    set nocompatible
     set complete-=i
     set cscopeverbose
     set encoding=utf-8
-    set history=10000
+    set history=1000
     set hlsearch
     set incsearch
     set langnoremap
     set laststatus=2
+    set nocompatible
     set ruler
     set showcmd
     set sidescroll=1
     set smarttab
     set ttyfast
     set wildmenu
-    set wildoptions="pum,tagfile"
+    set wildoption="pum,tagfile"
 endif
 
-set background=dark
-set number relativenumber
-set expandtab
-set tabstop=4
-set shiftwidth=4
-set wrap linebreak
-set wildmode=list:longest,full
-set wildignore=*.o,*.swp,.git/,.DS_Store,.localized
-set ignorecase
-set wildignorecase
-set fileignorecase
-set nofoldenable
-set colorcolumn=72
-
-"key binding
-map , <leader>
-inoremap jk <esc>zz:w<cr>
-nnoremap j gjzz
-nnoremap k gkzz
-nnoremap <leader><space> :nohlsearch<cr>
-nnoremap <leader>z :wa!<cr>
-nnoremap <leader>q :q<cr>
-
-filetype plugin indent on
-syntax enable
-
-"Fortran
-let fortran_more_precise = 1
-let fortran_do_enddo = 1
-au BufEnter,BufNew,BufRead *.f let fortran_fixed_source = 1
-au BufEnter,BufNew,BufRead *.f90 let fortran_free_source = 1
-au BufEnter,BufNew,BufRead *.fh set ft=fortran
-
-"jump to last cursor position
-au BufReadPost * if line("'\"") > 1 && line("'\"") <= line("$") |
-    \ exe "normal! g'\"" | endif
-
-"vim-plug
-if has('nvim')
-    call plug#begin(stdpath('data').'/plugged')
-else
-    call plug#begin('~/.vim/plugged')
+" plugin with vim-plug
+if has("nvim") " neovim plugin path
+    call plug#begin(stdpath("data")."/plugged")
+else " vim plugin path
+    call plug#begin("~/.vim/plugged")
 endif
-Plug 'tpope/vim-fugitive'
+
+" editing
 Plug 'tpope/vim-repeat'
-Plug 'easymotion/vim-easymotion'
-Plug 'scrooloose/nerdtree'
-Plug 'ervandew/supertab'
-Plug 'yhu266/vim-snippets'
-Plug 'altercation/vim-colors-solarized'
-Plug 'scrooloose/nerdcommenter'
-Plug 'itchyny/lightline.vim'
 Plug 'tpope/vim-endwise'
+Plug 'ervandew/supertab'
+Plug 'easymotion/vim-easymotion'
+
+" snippet library
+Plug 'yhu266/vim-snippets'
+
+" git integration
+Plug 'tpope/vim-fugitive'
 Plug 'airblade/vim-gitgutter'
-Plug 'ctrlpvim/ctrlp.vim'
-Plug 'nathanaelkane/vim-indent-guides'
-if has('nvim')
-    Plug 'SirVer/ultisnips'
-    Plug 'mileszs/ack.vim'
-    Plug 'tmux-plugins/vim-tmux'
-else
-    Plug 'MarcWeber/vim-addon-mw-utils'
-    Plug 'tomtom/tlib_vim'
-    Plug 'garbas/vim-snipmate'
-endif
-call plug#end()
-
-"nerdtree
-nnoremap <leader>n :NERDTreeToggle<cr>
-let NERDTreeCaseSensitiveSort = 1
-let NERDTreeBookmarksSort = 2
-let NERDTreeQuitOnOpen = 1
-let NERDTreeShowBookmarks = 1
-let NERDTreeShowHidden = 1
-let NERDTreeMinimalUI = 1
-let NERDTreeDirArrowExpandable = "+"
-let NERDTreeDirArrowCollapsible = "-"
-let NERDTreeIgnore = ['.DS_Store', '.localized']
-
-"vim-colors-solarized
-colorscheme solarized
-
-"lightlcontext
-let g:lightline = {
-    \ 'tab': {
-    \   'active': [ 'tabnum', 'filename', 'modified' ],
-    \   'inactive': [ 'tabnum', 'filename', 'modified' ],
-    \ },
-    \ 'tabline': {
-    \   'left': [ [ 'tabs' ] ],
-    \   'right': [ [ ] ],
-    \ },
-    \ 'colorscheme': 'solarized',
-    \ 'active': {
-    \   'left': [ [ 'mode', 'paste', ],
-    \             [ 'git_branch', ],
-    \             [ 'relativepath', 'readonly', 'modified', ], ],
-    \   'right': [ [ 'lineinfo', ],
-    \              [ 'fileencoding', ],
-    \              [ 'filetype', ], ], },
-    \ 'inactive': {
-    \   'left': [ [ 'relativepath', 'readonly', 'modified', ], ],
-    \   'right': [ [ 'fileencoding', ],
-    \              [ 'filetype', ], ], },
-    \ 'component_function': {
-    \   'git_branch': 'FugitiveHead', },
-    \ 'mode_map': {
-    \   'n': 'N',
-    \   'i': 'I',
-    \   'R': 'R',
-    \   'v': 'V',
-    \   'V': 'VL',
-    \   "\<C-v>": 'VB',
-    \   'c': 'C',
-    \   's': 'S',
-    \   'S': 'SL',
-    \   "\<C-s>": 'SB',
-    \   't': 'T', },
-    \ }
-
-"vim-gitgutter
 set updatetime=100
 
-"ack.vim
-if has('nvim')
-    let g:ackprg = 'ag --vimgrep'
-    cnoreabbrev Ack Ack!
-    nnoremap <leader>a :Ack!<space>
-endif
+" commenting
+Plug 'scrooloose/nerdcommenter'
+let g:NERDSpaceDelims = 1
 
-"tex
-au BufEnter,BufNew,BufRead *.tex set ft=tex
-au BufEnter,BufNew,BufRead *.sty set ft=tex
+" file fuzzy search
+Plug 'ctrlpvim/ctrlp.vim'
+let g:ctrlp_match_window = 'max:9'
+let g:ctrlp_show_hidden = 1
+let g:ctrlp_max_depth = 9
 
-"vim-indent-guides
-autocmd VimEnter,Colorscheme * :hi IndentGuidesOdd  guibg=0 ctermbg=0
-autocmd VimEnter,Colorscheme * :hi IndentGuidesEven guibg=0 ctermbg=0
+"UI
+Plug 'itchyny/lightline.vim'
+Plug 'nathanaelkane/vim-indent-guides'
+Plug 'NLKNguyen/papercolor-theme'
+let g:lightline = {
+    \   'tab': {
+    \       'active': [
+    \           'tabnum',
+    \           'filename',
+    \           'modified',
+    \       ],
+    \       'inactive': [
+    \           'tabnum',
+    \           'filename',
+    \           'modified',
+    \       ],
+    \   },
+    \   'tabline': {
+    \       'left': [
+    \           [
+    \               'tabs',
+    \           ],
+    \       ],
+    \       'right': [
+    \           [ ],
+    \       ],
+    \   },
+    \   'colorscheme': 'PaperColor',
+    \   'active': {
+    \       'left': [
+    \           [
+    \               'mode',
+    \               'paste',
+    \           ], [
+    \               'git_branch',
+    \           ], [
+    \               'relativepath',
+    \               'readonly',
+    \               'modified',
+    \           ],
+    \       ],
+    \       'right': [
+    \           [
+    \               'lineinfo',
+    \           ], [
+    \               'fileencoding',
+    \           ], [
+    \               'filetype',
+    \           ],
+    \       ],
+    \   },
+    \   'inactive': {
+    \       'left': [
+    \           [
+    \               'relativepath',
+    \               'readonly',
+    \               'modified',
+    \           ],
+    \       ],
+    \       'right': [
+    \           [
+    \               'fileencoding',
+    \               'filetype',
+    \           ],
+    \       ],
+    \   },
+    \   'component_function': {
+    \       'git_branch': 'FugitiveHead',
+    \   },
+    \   'mode_map': {
+    \       'n': 'N',
+    \       'i': 'I',
+    \       'R': 'R',
+    \       'v': 'V',
+    \       'V': 'VL',
+    \       "\<C-v>": 'VB',
+    \       'c': 'C',
+    \       's': 'S',
+    \       'S': 'SL',
+    \       "\<C-s>": 'SB',
+    \       't': 'T', },
+    \   }
+autocmd VimEnter,Colorscheme * :hi IndentGuidesOdd  ctermbg=lightgray guibg=lightgray
+autocmd VimEnter,Colorscheme * :hi IndentGuidesEven ctermbg=lightgray guibg=lightgray
 let g:indent_guides_enable_on_vim_startup = 1
 let g:indent_guides_guide_size = 1
 let g:indent_guides_start_level = 2
@@ -164,8 +190,39 @@ let g:indent_guides_exclude_filetypes = ['help', 'nerdtree']
 let g:indent_guides_default_mapping = 0
 let g:indent_guides_color_change_percent = 1
 let g:indent_guides_auto_colors = 0
+let g:PaperColor_Theme_Options =  {
+    \   'theme': {
+    \     'default': {
+    \       'transparent_background': 1
+    \     }
+    \   }
+    \ }
 
-"ctrlp.vim
-let g:ctrlp_match_window = 'max:9'
-let g:ctrlp_show_hidden = 1
-let g:ctrlp_max_depth = 9
+if has("nvim") " neovim specific plugin
+    Plug 'SirVer/ultisnips' " auto-completion engine
+    Plug 'mileszs/ack.vim' " code search
+    let g:ackprg = "ag --vimgrep"
+    cnoreabbrev Ack Ack!
+    Plug 'tmux-plugins/vim-tmux' " tmux config syntax
+
+else " vim specific plugin
+    " auto-completion engine
+    Plug 'MarcWeber/vim-addon-mw-utils'
+    Plug 'tomtom/tlib_vim'
+    Plug 'garbas/vim-snipmate'
+endif
+call plug#end()
+
+" language specific setting
+
+" Fortran
+let fortran_more_precise = 1
+let fortran_do_enddo = 1
+au BufEnter,BufNew,BufRead *.f let fortran_fixed_source = 1
+au BufEnter,BufNew,BufRead *.f90 let fortran_free_source = 1
+au BufEnter,BufNew,BufRead *.fh set ft=fortran
+
+" LaTeX
+au BufEnter,BufNew,BufRead *.tex set ft=tex
+au BufEnter,BufNew,BufRead *.sty set ft=tex
+
