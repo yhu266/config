@@ -35,8 +35,9 @@ nnoremap k gk
 nnoremap <Leader><Space> :nohlsearch<Cr>
 nnoremap <Leader>w :wa!<Cr>
 nnoremap <Leader>q :q<Cr>
-nnoremap <Leader>gm :!gmake<Cr>
-nnoremap <leader>a :Ack!<space>
+nnoremap <Leader>g :Git<Space>
+nnoremap <Leader>m :!gmake<Cr>
+nnoremap <leader>a :Ack!<Space>
 
 " syntax
 filetype plugin indent on
@@ -179,8 +180,9 @@ let g:lightline = {
     \       's': 'S',
     \       'S': 'SL',
     \       "\<C-s>": 'SB',
-    \       't': 'T', },
-    \   }
+    \       't': 'T',
+    \   },
+    \ }
 autocmd VimEnter,Colorscheme * :hi IndentGuidesOdd  ctermbg=lightgray guibg=lightgray
 autocmd VimEnter,Colorscheme * :hi IndentGuidesEven ctermbg=lightgray guibg=lightgray
 let g:indent_guides_enable_on_vim_startup = 1
@@ -192,10 +194,10 @@ let g:indent_guides_color_change_percent = 1
 let g:indent_guides_auto_colors = 0
 let g:PaperColor_Theme_Options =  {
     \   'theme': {
-    \     'default': {
-    \       'transparent_background': 1
-    \     }
-    \   }
+    \       'default': {
+    \           'transparent_background': 1,
+    \       },
+    \   },
     \ }
 
 if has("nvim") " neovim specific plugin
