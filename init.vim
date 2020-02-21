@@ -24,8 +24,9 @@ set fileignorecase
 " disable code folding
 set nofoldenable
 
-" background
+" UI
 set background=dark
+set noshowmode
 
 " key mapping
 map <Space> <Leader>
