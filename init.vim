@@ -30,8 +30,8 @@ set background=light
 " key mapping
 map <Space> <Leader>
 inoremap jk <Esc>
-nnoremap j gj
-nnoremap k gk
+nnoremap j gjzz
+nnoremap k gkzz
 nnoremap <Leader><Space> :nohlsearch<Cr>
 nnoremap <Leader>w :wa!<Cr>
 nnoremap <Leader>q :q<Cr>
@@ -44,8 +44,7 @@ filetype plugin indent on
 syntax enable
 
 " hot exit
-au BufReadPost * if line("'\"") > 1 && line("'\"") <= line("$") |
-    \ exe "normal! g'\"" | endif
+au BufReadPost * if line("'\"") > 1 && line("'\"") <= line("$") | exe "normal! g'\"" | endif
 
 if has('nvim') " neovim specific setting
     set guicursor=a:block,a:blinkon1
@@ -66,7 +65,7 @@ else " vim specific setting
     set smarttab
     set ttyfast
     set wildmenu
-    set wildoption="pum,tagfile"
+    set wildoptions="pum,tagfile"
 endif
 
 " plugin with vim-plug
@@ -81,6 +80,8 @@ Plug 'tpope/vim-repeat'
 Plug 'tpope/vim-endwise'
 Plug 'ervandew/supertab'
 Plug 'easymotion/vim-easymotion'
+Plug 'tpope/vim-surround'
+Plug 'majutsushi/tagbar'
 
 " snippet library
 Plug 'yhu266/vim-snippets'
@@ -94,13 +95,13 @@ set updatetime=100
 Plug 'scrooloose/nerdcommenter'
 let g:NERDSpaceDelims = 1
 
-" file fuzzy search
+" file search
 Plug 'ctrlpvim/ctrlp.vim'
 let g:ctrlp_match_window = 'max:9'
 let g:ctrlp_show_hidden = 1
 let g:ctrlp_max_depth = 9
 
-"UI
+" UI
 Plug 'itchyny/lightline.vim'
 Plug 'nathanaelkane/vim-indent-guides'
 Plug 'NLKNguyen/papercolor-theme'
@@ -200,20 +201,26 @@ let g:PaperColor_Theme_Options =  {
     \   },
     \ }
 
+" language
+" tmux config
+Plug 'tmux-plugins/vim-tmux'
+
 if has("nvim") " neovim specific plugin
     Plug 'SirVer/ultisnips' " auto-completion engine
     Plug 'mileszs/ack.vim' " code search
     let g:ackprg = "ag --vimgrep"
     cnoreabbrev Ack Ack!
-    Plug 'tmux-plugins/vim-tmux' " tmux config syntax
-
 else " vim specific plugin
     " auto-completion engine
     Plug 'MarcWeber/vim-addon-mw-utils'
     Plug 'tomtom/tlib_vim'
     Plug 'garbas/vim-snipmate'
 endif
+
 call plug#end()
+
+" color
+colorscheme PaperColor
 
 " language specific setting
 
@@ -227,4 +234,3 @@ au BufEnter,BufNew,BufRead *.fh set ft=fortran
 " LaTeX
 au BufEnter,BufNew,BufRead *.tex set ft=tex
 au BufEnter,BufNew,BufRead *.sty set ft=tex
-
