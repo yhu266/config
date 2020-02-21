@@ -7,7 +7,6 @@ zstyle ':completion:*' matcher-list 'm:{a-z}={A-Za-z}'
 PS1='%2~ >> '
 
 # alias
-alias l='ls -alG'
 alias clc='clear'
 alias v='nvim'
 alias vg='nvim +Git'
@@ -15,7 +14,7 @@ alias vp='nvim +CtrlP'
 alias vm='nvim -M'
 alias t='tree -C'
 alias matlab='matlab -nosplash -nodesktop'
-alias stext='subl'
+alias text='subl'
 
 # environment variables
 PATH=/usr/local/bin:$PATH
@@ -41,4 +40,6 @@ if ! zplug check --verbose; then
     fi
 fi
 
-zplug load --verbose
+zplug load
+
+alias k='k -a'
