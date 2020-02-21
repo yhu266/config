@@ -25,3 +25,20 @@ PATH=/usr/local/lib/ruby/gems/2.6.0/bin:$PATH
 PATH=/usr/local/opt/ruby/bin:$PATH
 LDFLAGS="-L/usr/local/opt/ruby/lib"
 CPPFLAGS="-I/usr/local/opt/ruby/include"
+
+# zplug
+export ZPLUG_HOME=/usr/local/opt/zplug
+source $ZPLUG_HOME/init.zsh
+
+zplug "zdharma/fast-syntax-highlighting", defer:2
+zplug "supercrabtree/k"
+
+# install plug-in
+if ! zplug check --verbose; then
+    printf "Install? [y/N]: "
+    if read -q; then
+        echo; zplug install
+    fi
+fi
+
+zplug load --verbose

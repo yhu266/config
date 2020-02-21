@@ -25,7 +25,7 @@ set fileignorecase
 set nofoldenable
 
 " background
-set background=light
+set background=dark
 
 " key mapping
 map <Space> <Leader>
@@ -102,9 +102,9 @@ let g:ctrlp_show_hidden = 1
 let g:ctrlp_max_depth = 9
 
 " UI
+Plug 'nanotech/jellybeans.vim'
 Plug 'itchyny/lightline.vim'
 Plug 'nathanaelkane/vim-indent-guides'
-Plug 'NLKNguyen/papercolor-theme'
 let g:lightline = {
     \   'tab': {
     \       'active': [
@@ -128,7 +128,7 @@ let g:lightline = {
     \           [ ],
     \       ],
     \   },
-    \   'colorscheme': 'PaperColor',
+    \   'colorscheme': 'jellybeans',
     \   'active': {
     \       'left': [
     \           [
@@ -184,22 +184,11 @@ let g:lightline = {
     \       't': 'T',
     \   },
     \ }
-autocmd VimEnter,Colorscheme * :hi IndentGuidesOdd  ctermbg=lightgray guibg=lightgray
-autocmd VimEnter,Colorscheme * :hi IndentGuidesEven ctermbg=lightgray guibg=lightgray
 let g:indent_guides_enable_on_vim_startup = 1
 let g:indent_guides_guide_size = 1
 let g:indent_guides_start_level = 2
 let g:indent_guides_exclude_filetypes = ['help', 'nerdtree']
 let g:indent_guides_default_mapping = 0
-let g:indent_guides_color_change_percent = 1
-let g:indent_guides_auto_colors = 0
-let g:PaperColor_Theme_Options =  {
-    \   'theme': {
-    \       'default': {
-    \           'transparent_background': 1,
-    \       },
-    \   },
-    \ }
 
 " language
 " tmux config
@@ -220,7 +209,7 @@ endif
 call plug#end()
 
 " color
-colorscheme PaperColor
+colorscheme jellybeans
 
 " language specific setting
 
