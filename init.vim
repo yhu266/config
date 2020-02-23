@@ -38,9 +38,11 @@ nnoremap <Leader>w :wa!<Cr>
 nnoremap <Leader>q :q<Cr>
 nnoremap <Leader>g :Git<Space>
 nnoremap <Leader>m :!gmake<Cr>
-nnoremap <Leader>r :!./bin/main<Cr>
+nnoremap <Leader>r :!gmake test<Cr>
 nnoremap <leader>a :Ack!<Space>
 nnoremap <Leader>t :TagbarToggle<Cr>
+nnoremap <Leader>fh :e %<.h<Cr>
+nnoremap <Leader>fc :e %<.c<Cr>
 
 " syntax
 filetype plugin indent on
@@ -199,8 +201,8 @@ let g:indent_guides_exclude_filetypes = ['help', 'nerdtree']
 let g:indent_guides_default_mapping = 0
 
 " language
-" tmux config
-Plug 'tmux-plugins/vim-tmux'
+Plug 'tmux-plugins/vim-tmux' " tmux config
+Plug 'octol/vim-cpp-enhanced-highlight' " C/C++
 
 if has("nvim") " neovim specific plugin
     Plug 'SirVer/ultisnips' " auto-completion engine
