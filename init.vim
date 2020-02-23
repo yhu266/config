@@ -40,6 +40,7 @@ nnoremap <Leader>g :Git<Space>
 nnoremap <Leader>m :!gmake<Cr>
 nnoremap <Leader>r :!./bin/main<Cr>
 nnoremap <leader>a :Ack!<Space>
+nnoremap <Leader>t :TagbarToggle<Cr>
 
 " syntax
 filetype plugin indent on
@@ -84,6 +85,11 @@ Plug 'ervandew/supertab'
 Plug 'easymotion/vim-easymotion'
 Plug 'tpope/vim-surround'
 Plug 'majutsushi/tagbar'
+let g:tagbar_case_insensitive = 1
+let g:tagbar_compact = 1
+let g:tagbar_indent = 1
+let g:tagbar_expand = 1
+let g:tagbar_iconchars = ['+', '-'] 
 
 " snippet library
 Plug 'yhu266/vim-snippets'
