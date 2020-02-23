@@ -30,7 +30,7 @@ set noshowmode
 
 " key mapping
 map <Space> <Leader>
-inoremap jk <Esc>
+inoremap jk <Esc>:w<Cr>
 nnoremap j gjzz
 nnoremap k gkzz
 nnoremap <Leader><Space> :nohlsearch<Cr>
@@ -38,6 +38,7 @@ nnoremap <Leader>w :wa!<Cr>
 nnoremap <Leader>q :q<Cr>
 nnoremap <Leader>g :Git<Space>
 nnoremap <Leader>m :!gmake<Cr>
+nnoremap <Leader>r :!./bin/main<Cr>
 nnoremap <leader>a :Ack!<Space>
 
 " syntax
