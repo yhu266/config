@@ -3,7 +3,7 @@ set expandtab
 set tabstop=4
 set shiftwidth=4
 
-" number
+" line number
 set number
 set relativenumber
 
@@ -14,7 +14,7 @@ set nolist
 
 " wild mode
 set wildmode=list:longest,full
-set wildignore=*.o,*.swp
+set wildignore=*.o,*.swp,*.DS_Store,*.git
 
 " editing
 set ignorecase
@@ -27,8 +27,9 @@ set nofoldenable
 " UI
 set background=dark
 set noshowmode
+set colorcolumn=72
 
-" key mapping
+" key binding
 map <Space> <Leader>
 inoremap jk <Esc>:w<Cr>
 nnoremap j gjzz
@@ -36,13 +37,12 @@ nnoremap k gkzz
 nnoremap <Leader><Space> :nohlsearch<Cr>
 nnoremap <Leader>w :wa!<Cr>
 nnoremap <Leader>q :q<Cr>
-nnoremap <Leader>g :Git<Space>
-nnoremap <Leader>m :!gmake<Cr>
-nnoremap <Leader>r :!gmake test<Cr>
-nnoremap <leader>a :Ack!<Space>
-nnoremap <Leader>t :TagbarToggle<Cr>
 nnoremap <Leader>fh :e %<.h<Cr>
 nnoremap <Leader>fc :e %<.c<Cr>
+nnoremap <Leader>g :Git<Space>
+nnoremap <leader>a :Ack!<Space>
+nnoremap <Leader>t :TagbarToggle<Cr>
+nnoremap <Leader>n :NERDTreeToggle<Cr>
 
 " syntax
 filetype plugin indent on
@@ -87,11 +87,23 @@ Plug 'ervandew/supertab'
 Plug 'easymotion/vim-easymotion'
 Plug 'tpope/vim-surround'
 Plug 'majutsushi/tagbar'
+Plug 'preservim/nerdtree'
 let g:tagbar_case_insensitive = 1
 let g:tagbar_compact = 1
 let g:tagbar_indent = 1
 let g:tagbar_expand = 1
 let g:tagbar_iconchars = ['+', '-'] 
+let NERDTreeCaseSensitiveSort = 1
+let NERDTreeNaturalSort = 1
+let NERDTreeHighlightCursorline = 0
+let NERDTreeRespectWildIgnore = 1
+let NERDTreeBookmarksSort = 2
+let NERDTreeQuitOnOpen = 3
+let NERDTreeShowBookmarks = 1
+let NERDTreeShowHidden = 1
+let NERDTreeMinimalUI = 1
+let NERDTreeDirArrowExpandable="+"
+let NERDTreeDirArrowCollapsible="-"
 
 " snippet library
 Plug 'yhu266/vim-snippets'
@@ -102,7 +114,7 @@ Plug 'airblade/vim-gitgutter'
 set updatetime=100
 
 " commenting
-Plug 'scrooloose/nerdcommenter'
+Plug 'preservim/nerdcommenter'
 let g:NERDSpaceDelims = 1
 
 " file search
@@ -226,8 +238,7 @@ colorscheme jellybeans
 " Fortran
 let fortran_more_precise = 1
 let fortran_do_enddo = 1
-au BufEnter,BufNew,BufRead *.f let fortran_fixed_source = 1
-au BufEnter,BufNew,BufRead *.f90 let fortran_free_source = 1
+let fortran_free_source = 1
 au BufEnter,BufNew,BufRead *.fh set ft=fortran
 
 " LaTeX
