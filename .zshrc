@@ -42,4 +42,4 @@ fi
 
 zplug load
 
-alias k='k -a'
+alias k='clc; k -a'
