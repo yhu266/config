@@ -244,3 +244,4 @@ au BufEnter,BufNew,BufRead *.fh set ft=fortran
 " LaTeX
 au BufEnter,BufNew,BufRead *.tex set ft=tex
 au BufEnter,BufNew,BufRead *.sty set ft=tex
+au BufEnter,BufNew,BufRead *.tex nnoremap <Leader>b :!latexmk -pdf -quiet<Cr>
