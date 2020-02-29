@@ -8,25 +8,31 @@ PS1='%2~ >> '
 
 # alias
 alias clc='clear'
-alias v='nvim'
-alias vg='nvim +Git'
-alias vp='nvim +CtrlP'
-alias vm='nvim -M'
+alias vg='v +Git'
+alias vp='v +CtrlP'
+alias vm='v -M'
 alias t='tree -C'
-alias matlab='matlab -nosplash -nodesktop'
-alias text='subl'
-
-# environment variables
-PATH=/usr/local/bin:$PATH
-PATH=/usr/local/texlive/2019/bin/x86_64-darwin:$PATH
-PATH=/Applications/MATLAB_R2019b.app/bin:$PATH
-PATH=/usr/local/lib/ruby/gems/2.6.0/bin:$PATH
-PATH=/usr/local/opt/ruby/bin:$PATH
-LDFLAGS="-L/usr/local/opt/ruby/lib"
-CPPFLAGS="-I/usr/local/opt/ruby/include"
 
 # zplug
-export ZPLUG_HOME=/usr/local/opt/zplug
+if [[ "$(uname 2> /dev/null)" == "Linux" ]]; then
+    # alias
+    alias v='vim'
+    export ZPLUG_HOME=/soe/yhu266/.zplug
+elif [[ "$(uname 2> /dev/null)" == "Darwin" ]]; then
+    # alias
+    alias v='nvim'
+    alias matlab='matlab -nosplash -nodesktop'
+    alias text='subl'
+    # environment variables
+    PATH=/usr/local/bin:$PATH
+    PATH=/usr/local/texlive/2019/bin/x86_64-darwin:$PATH
+    PATH=/Applications/MATLAB_R2019b.app/bin:$PATH
+    PATH=/usr/local/lib/ruby/gems/2.6.0/bin:$PATH
+    PATH=/usr/local/opt/ruby/bin:$PATH
+    LDFLAGS="-L/usr/local/opt/ruby/lib"
+    CPPFLAGS="-I/usr/local/opt/ruby/include"
+    export ZPLUG_HOME=/usr/local/opt/zplug
+fi
 source $ZPLUG_HOME/init.zsh
 
 zplug "zdharma/fast-syntax-highlighting", defer:2
