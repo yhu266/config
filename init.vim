@@ -1,6 +1,6 @@
 if has("nvim")
     set gcr=a:blinkon1,a:block
-"else
+else
     set hls is ai ar
     set bs=indent,eol,start
     set bo=all
