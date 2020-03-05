@@ -1,37 +1,42 @@
-" tab
-set expandtab
-set tabstop=4
-set shiftwidth=4
-
-" line number
-set number
-set relativenumber
-
-" line wrapping
-set wrap
-set linebreak
-set nolist
-
-" wild mode
-set wildmode=list:longest,full
-set wildignore=*.o,*.swp,*.DS_Store,*.git
-
-" editing
-set ignorecase
-set wildignorecase
-set fileignorecase
-
-" disable code folding
-set nofoldenable
-
-" UI
-set background=dark
-set noshowmode
-set colorcolumn=72
-
-" key binding
+if has("nvim")
+    set gcr=a:blinkon1,a:block
+"else
+    set hls is ai ar
+    set bs=indent,eol,start
+    set bo=all
+    set nocp
+    set cpt-=i
+    set cscopeverbose
+    set dy=lastline,msgsep
+    set enc=utf-8
+    set fo=tcqj
+    set nofs
+    set hi=10000
+    set langnoremap
+    set nolrm
+    set ls=2
+    set lcs="tab:> ,trail:-,nbsp:+"
+    set nf="bin,hex"
+    set ru
+    set sc
+    set ss=1
+    set sta
+    set tf
+    set ssop="blank,buffers,curdir,folds,\help,tabpages,winsize"
+    set wmnu wop="pum,tagfile"
+endif
+set et ts=4 sw=4
+set nu rnu
+set bg=dark
+set wrap lbr nolist
+set wim=list:longest,full wig=*.o,*.swp,*.DS_Store,*.git
+set ic wic fic
+set nofen
+set nosmd
+set cc=72
+set ut=100
 map <Space> <Leader>
-inoremap jk <Esc>:w<Cr>
+inoremap jk <Esc>
 nnoremap j gjzz
 nnoremap k gkzz
 nnoremap <Leader><Space> :nohlsearch<Cr>
@@ -43,44 +48,16 @@ nnoremap <Leader>g :Git<Space>
 nnoremap <leader>a :Ack!<Space>
 nnoremap <Leader>t :TagbarToggle<Cr>
 nnoremap <Leader>n :NERDTreeToggle<Cr>
-
-" syntax
 filetype plugin indent on
 syntax enable
-
-" hot exit
-au BufReadPost * if line("'\"") > 1 && line("'\"") <= line("$") | exe "normal! g'\"" | endif
-
-if has('nvim') " neovim specific setting
-    set guicursor=a:block,a:blinkon1
-else " vim specific setting
-    set autoindent
-    set complete-=i
-    set cscopeverbose
-    set encoding=utf-8
-    set history=1000
-    set hlsearch
-    set incsearch
-    set langnoremap
-    set laststatus=2
-    set nocompatible
-    set ruler
-    set showcmd
-    set sidescroll=1
-    set smarttab
-    set ttyfast
-    set wildmenu
-    set wildoptions="pum,tagfile"
-endif
-
-" plugin with vim-plug
-if has("nvim") " neovim plugin path
+au BufReadPost * if line("'\"") > 1 && line("'\"") <= line("$")
+    \ | exe "normal! g'\""
+    \ | endif
+if has("nvim")
     call plug#begin(stdpath("data")."/plugged")
-else " vim plugin path
+else
     call plug#begin("~/.vim/plugged")
 endif
-
-" editing
 Plug 'tpope/vim-repeat'
 Plug 'tpope/vim-endwise'
 Plug 'ervandew/supertab'
@@ -88,6 +65,25 @@ Plug 'easymotion/vim-easymotion'
 Plug 'tpope/vim-surround'
 Plug 'majutsushi/tagbar'
 Plug 'preservim/nerdtree'
+Plug 'yhu266/vim-snippets'
+Plug 'tpope/vim-fugitive'
+Plug 'airblade/vim-gitgutter'
+Plug 'preservim/nerdcommenter'
+Plug 'ctrlpvim/ctrlp.vim'
+Plug 'nanotech/jellybeans.vim'
+Plug 'itchyny/lightline.vim'
+Plug 'nathanaelkane/vim-indent-guides'
+Plug 'tmux-plugins/vim-tmux'
+Plug 'octol/vim-cpp-enhanced-highlight'
+Plug 'mileszs/ack.vim'
+if has("nvim")
+    Plug 'SirVer/ultisnips'
+else
+    Plug 'MarcWeber/vim-addon-mw-utils'
+    Plug 'tomtom/tlib_vim'
+    Plug 'garbas/vim-snipmate'
+endif
+call plug#end()
 let g:tagbar_case_insensitive = 1
 let g:tagbar_compact = 1
 let g:tagbar_indent = 1
@@ -104,29 +100,10 @@ let NERDTreeShowHidden = 1
 let NERDTreeMinimalUI = 1
 let NERDTreeDirArrowExpandable="+"
 let NERDTreeDirArrowCollapsible="-"
-
-" snippet library
-Plug 'yhu266/vim-snippets'
-
-" git integration
-Plug 'tpope/vim-fugitive'
-Plug 'airblade/vim-gitgutter'
-set updatetime=100
-
-" commenting
-Plug 'preservim/nerdcommenter'
 let g:NERDSpaceDelims = 1
-
-" file search
-Plug 'ctrlpvim/ctrlp.vim'
 let g:ctrlp_match_window = 'max:9'
 let g:ctrlp_show_hidden = 1
 let g:ctrlp_max_depth = 9
-
-" UI
-Plug 'nanotech/jellybeans.vim'
-Plug 'itchyny/lightline.vim'
-Plug 'nathanaelkane/vim-indent-guides'
 let g:lightline = {
     \   'tab': {
     \       'active': [
@@ -211,37 +188,14 @@ let g:indent_guides_guide_size = 1
 let g:indent_guides_start_level = 2
 let g:indent_guides_exclude_filetypes = ['help', 'nerdtree']
 let g:indent_guides_default_mapping = 0
-
-" language
-Plug 'tmux-plugins/vim-tmux' " tmux config
-Plug 'octol/vim-cpp-enhanced-highlight' " C/C++
-
-if has("nvim") " neovim specific plugin
-    Plug 'SirVer/ultisnips' " auto-completion engine
-    Plug 'mileszs/ack.vim' " code search
-    let g:ackprg = "ag --vimgrep"
-    cnoreabbrev Ack Ack!
-else " vim specific plugin
-    " auto-completion engine
-    Plug 'MarcWeber/vim-addon-mw-utils'
-    Plug 'tomtom/tlib_vim'
-    Plug 'garbas/vim-snipmate'
-endif
-
-call plug#end()
-
-" color
-colorscheme jellybeans
-
-" language specific setting
-
-" Fortran
+let g:ackprg = "ag --vimgrep"
+cnorea Ack Ack!
+colo jellybeans
 let fortran_more_precise = 1
 let fortran_do_enddo = 1
 let fortran_free_source = 1
 au BufEnter,BufNew,BufRead *.fh set ft=fortran
-
-" LaTeX
 au BufEnter,BufNew,BufRead *.tex set ft=tex
 au BufEnter,BufNew,BufRead *.sty set ft=tex
-au BufEnter,BufNew,BufRead *.tex nnoremap <Leader>b :!latexmk -pdf -quiet<Cr>
+au BufEnter,BufNew,BufRead *.tex
+    \ nnoremap <Leader>b :!latexmk -pdf -quiet<Cr>
