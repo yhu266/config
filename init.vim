@@ -25,18 +25,19 @@ else
     set ssop="blank,buffers,curdir,folds,\help,tabpages,winsize"
     set wmnu wop="pum,tagfile"
 endif
-set et ts=4 sw=4
+set noet ts=4 sw=4
 set nu rnu
 set bg=dark
-set wrap lbr nolist
+set nolist listchars=tab:>-
 set wim=list:longest,full wig=*.o,*.swp,*.DS_Store,*.git
 set ic wic fic
 set nofen
 set nosmd
 set cc=72
 set ut=100
+set shm=filnxtToOFI
 map <Space> <Leader>
-inoremap jk <Esc>
+inoremap jk <Esc>:wa<Cr>
 nnoremap j gjzz
 nnoremap k gkzz
 nnoremap <Leader><Space> :nohlsearch<Cr>
@@ -48,6 +49,7 @@ nnoremap <Leader>g :Git<Space>
 nnoremap <leader>a :Ack!<Space>
 nnoremap <Leader>t :TagbarToggle<Cr>
 nnoremap <Leader>n :NERDTreeToggle<Cr>
+nnoremap <Leader>b :!gmake<Cr>
 filetype plugin indent on
 syntax enable
 au BufReadPost * if line("'\"") > 1 && line("'\"") <= line("$")
@@ -72,7 +74,6 @@ Plug 'preservim/nerdcommenter'
 Plug 'ctrlpvim/ctrlp.vim'
 Plug 'nanotech/jellybeans.vim'
 Plug 'itchyny/lightline.vim'
-Plug 'nathanaelkane/vim-indent-guides'
 Plug 'tmux-plugins/vim-tmux'
 Plug 'octol/vim-cpp-enhanced-highlight'
 Plug 'mileszs/ack.vim'
@@ -183,11 +184,6 @@ let g:lightline = {
     \       't': 'T',
     \   },
     \ }
-let g:indent_guides_enable_on_vim_startup = 1
-let g:indent_guides_guide_size = 1
-let g:indent_guides_start_level = 2
-let g:indent_guides_exclude_filetypes = ['help', 'nerdtree']
-let g:indent_guides_default_mapping = 0
 let g:ackprg = "ag --vimgrep"
 cnorea Ack Ack!
 colo jellybeans
@@ -196,6 +192,6 @@ let fortran_do_enddo = 1
 let fortran_free_source = 1
 au BufEnter,BufNew,BufRead *.fh set ft=fortran
 au BufEnter,BufNew,BufRead *.tex set ft=tex
+au BufEnter,BufNew,BufRead *.tex set spl=en
+au BufEnter,BufNew,BufRead *.tex set spell
 au BufEnter,BufNew,BufRead *.sty set ft=tex
-au BufEnter,BufNew,BufRead *.tex
-    \ nnoremap <Leader>b :!latexmk -pdf -quiet<Cr>
