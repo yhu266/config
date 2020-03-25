@@ -1,19 +1,20 @@
 if has("nvim")
     set gcr=a:blinkon1,a:block
+    set bo=all
+    set dy=lastline,msgsep
+    set nolrm
+	set shm=filnxtToOFI
 else
     set hls is ai ar
     set bs=indent,eol,start
-    set bo=all
     set nocp
     set cpt-=i
     set cscopeverbose
-    set dy=lastline,msgsep
     set enc=utf-8
     set fo=tcqj
     set nofs
     set hi=10000
     set langnoremap
-    set nolrm
     set ls=2
     set lcs="tab:> ,trail:-,nbsp:+"
     set nf="bin,hex"
@@ -35,7 +36,6 @@ set nofen
 set nosmd
 set cc=72
 set ut=100
-set shm=filnxtToOFI
 map <Space> <Leader>
 inoremap jk <Esc>:wa<Cr>
 nnoremap j gjzz
