@@ -34,6 +34,7 @@ set ic wic fic
 set nofen
 set nosmd
 set cc=72
+set cul
 set ut=100
 set shm=filnxtToOFI
 map <Space> <Leader>
@@ -49,7 +50,6 @@ nnoremap <Leader>g :Git<Space>
 nnoremap <leader>a :Ack!<Space>
 nnoremap <Leader>t :TagbarToggle<Cr>
 nnoremap <Leader>n :NERDTreeToggle<Cr>
-nnoremap <Leader>b :!gmake<Cr>
 filetype plugin indent on
 syntax enable
 au BufReadPost * if line("'\"") > 1 && line("'\"") <= line("$")
