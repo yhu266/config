@@ -77,6 +77,7 @@ Plug 'itchyny/lightline.vim'
 Plug 'tmux-plugins/vim-tmux'
 Plug 'octol/vim-cpp-enhanced-highlight'
 Plug 'mileszs/ack.vim'
+Plug 'bfrg/vim-cuda-syntax'
 if has("nvim")
     Plug 'SirVer/ultisnips'
 else
