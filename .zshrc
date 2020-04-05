@@ -11,6 +11,7 @@ alias vn='v .'
 alias t='tree -C'
 if [[ "$(uname 2> /dev/null)" == "Linux" ]]; then
 	alias check='qstat -u yhu266'
+	PATH=/usr/local/cuda/bin:$PATH
 	export ZPLUG_HOME=/soe/yhu266/.zplug
 elif [[ "$(uname 2> /dev/null)" == "Darwin" ]]; then
     alias matlab='matlab -nosplash -nodesktop'
