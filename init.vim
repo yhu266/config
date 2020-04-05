@@ -78,13 +78,9 @@ Plug 'tmux-plugins/vim-tmux'
 Plug 'octol/vim-cpp-enhanced-highlight'
 Plug 'mileszs/ack.vim'
 Plug 'bfrg/vim-cuda-syntax'
-if has("nvim")
-    Plug 'SirVer/ultisnips'
-else
-    Plug 'MarcWeber/vim-addon-mw-utils'
-    Plug 'tomtom/tlib_vim'
-    Plug 'garbas/vim-snipmate'
-endif
+Plug 'MarcWeber/vim-addon-mw-utils'
+Plug 'tomtom/tlib_vim'
+Plug 'garbas/vim-snipmate'
 call plug#end()
 let g:tagbar_case_insensitive = 1
 let g:tagbar_compact = 1
