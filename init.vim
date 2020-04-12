@@ -37,6 +37,7 @@ set nosmd
 set cc=72
 set cul
 set ut=100
+set cole=0
 map <Space> <Leader>
 inoremap jk <Esc>:wa<Cr>
 nnoremap j gjzz
