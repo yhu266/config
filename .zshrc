@@ -17,7 +17,7 @@ elif [[ "$(uname 2> /dev/null)" == "Darwin" ]]; then
     alias matlab='matlab -nosplash -nodesktop'
     alias text='subl'
     PATH=/usr/local/bin:$PATH
-    PATH=/usr/local/texlive/2019/bin/x86_64-darwin:$PATH
+    PATH=/usr/local/texlive/2020/bin/x86_64-darwin:$PATH
     PATH=/Applications/MATLAB_R2020a.app/bin:$PATH
     PATH=/usr/local/lib/ruby/gems/2.7.0/bin:$PATH
     PATH=/usr/local/opt/ruby/bin:$PATH
