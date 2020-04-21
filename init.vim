@@ -76,7 +76,6 @@ Plug 'ctrlpvim/ctrlp.vim'
 Plug 'nanotech/jellybeans.vim'
 Plug 'itchyny/lightline.vim'
 Plug 'tmux-plugins/vim-tmux'
-Plug 'octol/vim-cpp-enhanced-highlight'
 Plug 'mileszs/ack.vim'
 Plug 'bfrg/vim-cuda-syntax'
 Plug 'MarcWeber/vim-addon-mw-utils'
@@ -188,8 +187,4 @@ colo jellybeans
 let fortran_more_precise = 1
 let fortran_do_enddo = 1
 let fortran_free_source = 1
-au BufEnter,BufNew,BufRead *.fh set ft=fortran
-au BufEnter,BufNew,BufRead *.tex set ft=tex
-au BufEnter,BufNew,BufRead *.tex set spl=en
-au BufEnter,BufNew,BufRead *.tex set spell
-au BufEnter,BufNew,BufRead *.sty set ft=tex
+au BufEnter,BufNew,BufRead *.h set ft=c
