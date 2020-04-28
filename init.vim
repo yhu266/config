@@ -63,12 +63,9 @@ else
 endif
 Plug 'tpope/vim-repeat'
 Plug 'tpope/vim-endwise'
-Plug 'ervandew/supertab'
 Plug 'easymotion/vim-easymotion'
-Plug 'tpope/vim-surround'
 Plug 'majutsushi/tagbar'
 Plug 'preservim/nerdtree'
-Plug 'yhu266/vim-snippets'
 Plug 'tpope/vim-fugitive'
 Plug 'airblade/vim-gitgutter'
 Plug 'preservim/nerdcommenter'
@@ -78,9 +75,6 @@ Plug 'itchyny/lightline.vim'
 Plug 'tmux-plugins/vim-tmux'
 Plug 'mileszs/ack.vim'
 Plug 'bfrg/vim-cuda-syntax'
-Plug 'MarcWeber/vim-addon-mw-utils'
-Plug 'tomtom/tlib_vim'
-Plug 'garbas/vim-snipmate'
 call plug#end()
 let g:tagbar_case_insensitive = 1
 let g:tagbar_compact = 1
