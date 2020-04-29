@@ -96,6 +96,11 @@ let g:NERDSpaceDelims = 1
 let g:ctrlp_match_window = 'max:9'
 let g:ctrlp_show_hidden = 1
 let g:ctrlp_max_depth = 9
+let g:ctrlp_custom_ignore = {
+	\ 'dir': '\v[\/](bin|docs)$',
+	\ 'file': '\v\.(dat)$',
+	\ 'link': '',
+	\ }
 let g:lightline = {
     \   'tab': {
     \       'active': [
