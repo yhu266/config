@@ -1,9 +1,10 @@
 if has("nvim")
-    set gcr=a:blinkon1,a:block
-    set bo=all
-    set dy=lastline,msgsep
-    set nolrm
+	set gcr=a:blinkon1,a:block
+	set bo=all
+	set dy=lastline,msgsep
+	set nolrm
 	set shm=filnxtToOFI
+	set langnoremap
 else
     set hls is ai ar
     set bs=indent,eol,start
@@ -14,7 +15,6 @@ else
     set fo=tcqj
     set nofs
     set hi=10000
-    set langnoremap
     set ls=2
     set lcs="tab:> ,trail:-,nbsp:+"
     set nf="bin,hex"
