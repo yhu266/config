@@ -9,6 +9,7 @@ alias vp='v +CtrlP'
 alias vm='v -M'
 alias vn='v .'
 alias t='tree -C'
+alias qtop='watch --interval=1.0 qstat -a'
 if [[ "$(uname 2> /dev/null)" == "Linux" ]]; then
 	PATH=/usr/local/cuda/bin:$PATH
 	export ZPLUG_HOME=/soe/yhu266/.zplug
