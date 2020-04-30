@@ -3,7 +3,7 @@ if [ -f /etc/bashrc ]; then
 fi
 
 DEFAULT=$PS1
-PS1="[\u@\h] \w > "
+PS1="[\u@\h] \w >> "
 
 alias l="ls -a"
 alias ll="ls -al"
