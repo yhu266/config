@@ -6,25 +6,26 @@ if has("nvim")
 	set shm=filnxtToOFI
 	set langnoremap
 else
-    set hls is ai ar
-    set bs=indent,eol,start
-    set nocp
-    set cpt-=i
-    set cscopeverbose
-    set enc=utf-8
-    set fo=tcqj
-    set nofs
-    set hi=10000
-    set ls=2
-    set lcs="tab:> ,trail:-,nbsp:+"
-    set nf="bin,hex"
-    set ru
-    set sc
-    set ss=1
-    set sta
-    set tf
-    set ssop="blank,buffers,curdir,folds,\help,tabpages,winsize"
-    set wmnu wop="pum,tagfile"
+	set t_Co=256
+	set hls is ai ar
+	set bs=indent,eol,start
+	set nocp
+	set cpt-=i
+	set cscopeverbose
+	set enc=utf-8
+	set fo=tcqj
+	set nofs
+	set hi=10000
+	set ls=2
+	set lcs="tab:> ,trail:-,nbsp:+"
+	set nf="bin,hex"
+	set ru
+	set sc
+	set ss=1
+	set sta
+	set tf
+	set ssop="blank,buffers,curdir,folds,\help,tabpages,winsize"
+	set wmnu wop="pum,tagfile"
 endif
 set noet ts=8 sw=8
 set nu rnu
