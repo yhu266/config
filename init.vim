@@ -26,7 +26,7 @@ else
     set ssop="blank,buffers,curdir,folds,\help,tabpages,winsize"
     set wmnu wop="pum,tagfile"
 endif
-set noet ts=4 sw=4
+set noet ts=8 sw=8
 set nu rnu
 set bg=dark
 set nolist listchars=tab:>-
