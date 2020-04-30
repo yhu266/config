@@ -36,7 +36,6 @@ set nofen
 set nosmd
 set cc=72
 set cul
-set ut=100
 set cole=0
 map <Space> <Leader>
 inoremap jk <Esc>:wa<Cr>
@@ -67,7 +66,6 @@ Plug 'easymotion/vim-easymotion'
 Plug 'majutsushi/tagbar'
 Plug 'preservim/nerdtree'
 Plug 'tpope/vim-fugitive'
-Plug 'airblade/vim-gitgutter'
 Plug 'preservim/nerdcommenter'
 Plug 'ctrlpvim/ctrlp.vim'
 Plug 'nanotech/jellybeans.vim'
