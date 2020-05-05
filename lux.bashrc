@@ -17,3 +17,4 @@ alias vn="v ."
 alias check="squeue --user=yhu266"
 
 module load slurm
+module load git/2.23.0
