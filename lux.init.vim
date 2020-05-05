@@ -20,10 +20,7 @@ set ttyfast
 set sessionoptions="blank,buffers,curdir,folds,\help,tabpages,winsize"
 set wildmenu
 set wildoptions="pum,tagfile"
-set belloff=all
-set nolangremap
-set langnoremap
-set shortmess=filnxtToOFI
+set shortmess=filnxtToOI
 set noexpandtab
 set tabstop=8
 set shiftwidth=8
