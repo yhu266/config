@@ -77,6 +77,7 @@ let NERDTreeMinimalUI = 1
 let NERDTreeDirArrowExpandable="+"
 let NERDTreeDirArrowCollapsible="-"
 let g:NERDSpaceDelims = 1
+let g:ctrlp_working_path_mode = 'ca'
 let g:ctrlp_match_window = 'max:9'
 let g:ctrlp_show_hidden = 1
 let g:ctrlp_max_depth = 9

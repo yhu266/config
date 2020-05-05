@@ -13,3 +13,5 @@ alias vp="v +CtrlP"
 alias vm="v -M"
 alias vn="v ."
 alias check="squeue --user=yhu266"
+
+module load slurm
