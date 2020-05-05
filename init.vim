@@ -19,7 +19,7 @@ set wildignorecase
 set fileignorecase
 set nofoldenable
 set noshowmode
-set colorcolumn=72
+set colorcolumn=79
 set cursorline
 set conceallevel=0
 set diffopt+=vertical
@@ -30,10 +30,9 @@ nnoremap k gkzz
 nnoremap <Leader><Space> :nohlsearch<Cr>
 nnoremap <Leader>w :wa!<Cr>
 nnoremap <Leader>q :q<Cr>
-nnoremap <Leader>fh :e %<.h<Cr>
-nnoremap <Leader>fc :e %<.c<Cr>
 nnoremap <Leader>g :Git<Space>
 nnoremap <Leader>n :NERDTreeToggle<Cr>
+nnoremap <Leader>f :Gvdiffsplit<Cr>
 filetype plugin indent on
 syntax enable
 au BufReadPost * if line("'\"") > 1 && line("'\"") <= line("$")
