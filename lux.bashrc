@@ -1,3 +1,5 @@
+stty -ixon
+
 if [ -f /etc/bashrc ]; then
     . /etc/bashrc
 fi
