@@ -1,24 +1,25 @@
 set t_Co=256
-set hls is ai ar
-set bs=indent,eol,start
-set nocp
-set cpt-=i
+set hlsearch
+set autoindent
+set autoread
+set backspace=indent,eol,start
+set nocompatible
 set cscopeverbose
-set enc=utf-8
-set fo=tcqj
-set nofs
-set hi=10000
-set ls=2
-set lcs="tab:> ,trail:-,nbsp:+"
-set nf="bin,hex"
-set ru
-set sc
-set ss=1
-set sta
-set tf
-set ssop="blank,buffers,curdir,folds,\help,tabpages,winsize"
-set wmnu wop="pum,tagfile"
-
+set encoding=utf-8
+set formatoptions=tcqj
+set nofsync
+set history=10000
+set laststatus=2
+set listchars="tab:> ,trail:-,nbsp:+"
+set nrformats="bin,hex"
+set ruler
+set showcmd
+set sidescroll=1
+set smarttab
+set ttyfast
+set sessionoptions="blank,buffers,curdir,folds,\help,tabpages,winsize"
+set wildmenu
+set wildoptions="pum,tagfile"
 set belloff=all
 set nolangremap
 set langnoremap
