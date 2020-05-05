@@ -22,6 +22,7 @@ set noshowmode
 set colorcolumn=72
 set cursorline
 set conceallevel=0
+set diffopt+=vertical
 map <Space> <Leader>
 inoremap jk <Esc>:wa<Cr>
 nnoremap j gjzz
