@@ -1,20 +1,27 @@
-set gcr=a:blinkon1,a:block
-set bo=all
-set dy=lastline,msgsep
-set nolrm
-set shm=filnxtToOFI
+set guicursor=a:blinkon1,a:block
+set belloff=all
+set display=lastline,msgsep
+set nolangremap
 set langnoremap
-set noet ts=8 sw=8
-set nu rnu
-set bg=dark
-set nolist listchars=tab:>-
-set wim=list:longest,full wig=*.o,*.swp,*.DS_Store,*.git
-set ic wic fic
-set nofen
-set nosmd
-set cc=72
-set cul
-set cole=0
+set shortmess=filnxtToOFI
+set noexpandtab
+set tabstop=8
+set shiftwidth=8
+set number
+set relativenumber
+set background=dark
+set nolist
+set listchars=tab:>-
+set wildmode=list:longest,full
+set wildignore=*.o,*.swp,*.DS_Store,*.git
+set ignorecase
+set wildignorecase
+set fileignorecase
+set nofoldenable
+set noshowmode
+set colorcolumn=72
+set cursorline
+set conceallevel=0
 map <Space> <Leader>
 inoremap jk <Esc>:wa<Cr>
 nnoremap j gjzz
@@ -25,7 +32,6 @@ nnoremap <Leader>q :q<Cr>
 nnoremap <Leader>fh :e %<.h<Cr>
 nnoremap <Leader>fc :e %<.c<Cr>
 nnoremap <Leader>g :Git<Space>
-nnoremap <leader>a :Ack!<Space>
 nnoremap <Leader>n :NERDTreeToggle<Cr>
 filetype plugin indent on
 syntax enable
@@ -53,8 +59,8 @@ let NERDTreeQuitOnOpen = 3
 let NERDTreeShowBookmarks = 1
 let NERDTreeShowHidden = 1
 let NERDTreeMinimalUI = 1
-let NERDTreeDirArrowExpandable="+"
-let NERDTreeDirArrowCollapsible="-"
+let NERDTreeDirArrowExpandable = '+'
+let NERDTreeDirArrowCollapsible = '-'
 let g:NERDSpaceDelims = 1
 let g:ctrlp_working_path_mode = 'wa'
 let g:ctrlp_match_window = 'max:9'
@@ -66,86 +72,34 @@ let g:ctrlp_custom_ignore = {
 	\ 'link': '',
 	\ }
 let g:lightline = {
-    \   'tab': {
-    \       'active': [
-    \           'tabnum',
-    \           'filename',
-    \           'modified',
-    \       ],
-    \       'inactive': [
-    \           'tabnum',
-    \           'filename',
-    \           'modified',
-    \       ],
-    \   },
-    \   'tabline': {
-    \       'left': [
-    \           [
-    \               'tabs',
-    \           ],
-    \       ],
-    \       'right': [
-    \           [ ],
-    \       ],
-    \   },
-    \   'colorscheme': 'jellybeans',
-    \   'active': {
-    \       'left': [
-    \           [
-    \               'mode',
-    \               'paste',
-    \           ], [
-    \               'git_branch',
-    \           ], [
-    \               'relativepath',
-    \               'readonly',
-    \               'modified',
-    \           ],
-    \       ],
-    \       'right': [
-    \           [
-    \               'lineinfo',
-    \           ], [
-    \               'fileencoding',
-    \           ], [
-    \               'filetype',
-    \           ],
-    \       ],
-    \   },
-    \   'inactive': {
-    \       'left': [
-    \           [
-    \               'relativepath',
-    \               'readonly',
-    \               'modified',
-    \           ],
-    \       ],
-    \       'right': [
-    \           [
-    \               'fileencoding',
-    \               'filetype',
-    \           ],
-    \       ],
-    \   },
-    \   'component_function': {
-    \       'git_branch': 'FugitiveHead',
-    \   },
-    \   'mode_map': {
-    \       'n': 'N',
-    \       'i': 'I',
-    \       'R': 'R',
-    \       'v': 'V',
-    \       'V': 'VL',
-    \       "\<C-v>": 'VB',
-    \       'c': 'C',
-    \       's': 'S',
-    \       'S': 'SL',
-    \       "\<C-s>": 'SB',
-    \       't': 'T',
-    \   },
-    \ }
-colo jellybeans
+	\   'tab': {
+	\       'active': [ 'tabnum', 'filename', 'modified' ],
+	\       'inactive': [ 'tabnum', 'filename', 'modified' ]
+	\   },
+	\   'tabline': {
+	\       'left': [ [ 'tabs' ] ],
+	\       'right': [ [ ] ]
+	\   },
+	\   'colorscheme': 'jellybeans',
+	\   'active': {
+	\       'left': [
+	\           [ 'mode', 'paste' ],
+	\           [ 'git_branch' ],
+	\           [ 'relativepath', 'lineinfo', 'readonly', 'modified' ]
+	\       ],
+	\       'right': [ ]
+	\   },
+	\   'inactive': {
+	\       'left': [ [ 'relativepath', 'readonly', 'modified' ] ],
+	\       'right': [ ]
+	\   },
+	\   'component_function': {
+	\       'git_branch': 'FugitiveHead'
+	\   }
+	\ }
+colorscheme jellybeans
 let fortran_more_precise = 1
 let fortran_do_enddo = 1
 let fortran_free_source = 1
 au BufEnter,BufNew,BufRead *.h set ft=c
+au BufEnter,BufNew,BufRead *.hpp set ft=cpp
