@@ -1,32 +1,9 @@
-if has("nvim")
-	set gcr=a:blinkon1,a:block
-	set bo=all
-	set dy=lastline,msgsep
-	set nolrm
-	set shm=filnxtToOFI
-	set langnoremap
-else
-	set t_Co=256
-	set hls is ai ar
-	set bs=indent,eol,start
-	set nocp
-	set cpt-=i
-	set cscopeverbose
-	set enc=utf-8
-	set fo=tcqj
-	set nofs
-	set hi=10000
-	set ls=2
-	set lcs="tab:> ,trail:-,nbsp:+"
-	set nf="bin,hex"
-	set ru
-	set sc
-	set ss=1
-	set sta
-	set tf
-	set ssop="blank,buffers,curdir,folds,\help,tabpages,winsize"
-	set wmnu wop="pum,tagfile"
-endif
+set gcr=a:blinkon1,a:block
+set bo=all
+set dy=lastline,msgsep
+set nolrm
+set shm=filnxtToOFI
+set langnoremap
 set noet ts=8 sw=8
 set nu rnu
 set bg=dark
@@ -49,22 +26,15 @@ nnoremap <Leader>fh :e %<.h<Cr>
 nnoremap <Leader>fc :e %<.c<Cr>
 nnoremap <Leader>g :Git<Space>
 nnoremap <leader>a :Ack!<Space>
-nnoremap <Leader>t :TagbarToggle<Cr>
 nnoremap <Leader>n :NERDTreeToggle<Cr>
 filetype plugin indent on
 syntax enable
 au BufReadPost * if line("'\"") > 1 && line("'\"") <= line("$")
-    \ | exe "normal! g'\""
-    \ | endif
-if has("nvim")
-    call plug#begin(stdpath("data")."/plugged")
-else
-    call plug#begin("~/.vim/plugged")
-endif
+	\ | exe "normal! g'\""
+	\ | endif
+call plug#begin(stdpath("data")."/plugged")
 Plug 'tpope/vim-repeat'
 Plug 'tpope/vim-endwise'
-Plug 'easymotion/vim-easymotion'
-Plug 'majutsushi/tagbar'
 Plug 'preservim/nerdtree'
 Plug 'tpope/vim-fugitive'
 Plug 'preservim/nerdcommenter'
@@ -72,14 +42,8 @@ Plug 'ctrlpvim/ctrlp.vim'
 Plug 'nanotech/jellybeans.vim'
 Plug 'itchyny/lightline.vim'
 Plug 'tmux-plugins/vim-tmux'
-Plug 'mileszs/ack.vim'
 Plug 'bfrg/vim-cuda-syntax'
 call plug#end()
-let g:tagbar_case_insensitive = 1
-let g:tagbar_compact = 1
-let g:tagbar_indent = 1
-let g:tagbar_expand = 1
-let g:tagbar_iconchars = ['+', '-'] 
 let NERDTreeCaseSensitiveSort = 1
 let NERDTreeNaturalSort = 1
 let NERDTreeHighlightCursorline = 0
@@ -180,8 +144,6 @@ let g:lightline = {
     \       't': 'T',
     \   },
     \ }
-let g:ackprg = "ag --vimgrep"
-cnorea Ack Ack!
 colo jellybeans
 let fortran_more_precise = 1
 let fortran_do_enddo = 1

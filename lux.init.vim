@@ -39,7 +39,6 @@ nnoremap <Leader>q :q<Cr>
 nnoremap <Leader>fh :e %<.h<Cr>
 nnoremap <Leader>fc :e %<.c<Cr>
 nnoremap <Leader>g :Git<Space>
-nnoremap <Leader>t :TagbarToggle<Cr>
 nnoremap <Leader>n :NERDTreeToggle<Cr>
 filetype plugin indent on
 syntax enable
@@ -49,8 +48,6 @@ au BufReadPost * if line("'\"") > 1 && line("'\"") <= line("$")
 call plug#begin("~/.vim/plugged")
 Plug 'tpope/vim-repeat'
 Plug 'tpope/vim-endwise'
-Plug 'easymotion/vim-easymotion'
-Plug 'majutsushi/tagbar'
 Plug 'preservim/nerdtree'
 Plug 'tpope/vim-fugitive'
 Plug 'preservim/nerdcommenter'
@@ -60,11 +57,6 @@ Plug 'itchyny/lightline.vim'
 Plug 'tmux-plugins/vim-tmux'
 Plug 'bfrg/vim-cuda-syntax'
 call plug#end()
-let g:tagbar_case_insensitive = 1
-let g:tagbar_compact = 1
-let g:tagbar_indent = 1
-let g:tagbar_expand = 1
-let g:tagbar_iconchars = ['+', '-'] 
 let NERDTreeCaseSensitiveSort = 1
 let NERDTreeNaturalSort = 1
 let NERDTreeHighlightCursorline = 0
