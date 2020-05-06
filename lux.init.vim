@@ -102,9 +102,9 @@ let g:lightline = {
 	\       'left': [
 	\           [ 'mode', 'paste' ],
 	\           [ 'git_branch' ],
-	\           [ 'relativepath', 'lineinfo', 'readonly', 'modified' ]
+	\           [ 'relativepath', 'readonly', 'modified' ]
 	\       ],
-	\       'right': [ ]
+	\       'right': [ ' lineinfo', 'filetype' ]
 	\   },
 	\   'inactive': {
 	\       'left': [ [ 'relativepath', 'readonly', 'modified' ] ],
