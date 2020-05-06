@@ -91,10 +91,11 @@ let g:lightline = {
 	\           [ 'fileencoding' ],
 	\           [ 'filetype' ],
 	\           ['lineinfo' ]
+	\       ]
 	\   },
 	\   'inactive': {
 	\       'left': [ [ 'relativepath', 'readonly', 'modified' ] ],
-	\       'right': [ 'filetype' ]
+	\       'right': [ [ 'filetype' ] ]
 	\   },
 	\   'component_function': {
 	\       'git_branch': 'FugitiveHead'
