@@ -5,8 +5,8 @@ set nolangremap
 set langnoremap
 set shortmess=filnxtToOFI
 set noexpandtab
-set tabstop=8
-set shiftwidth=8
+set tabstop=4
+set shiftwidth=4
 set number
 set relativenumber
 set background=dark
@@ -87,11 +87,14 @@ let g:lightline = {
 	\           [ 'git_branch' ],
 	\           [ 'relativepath', 'lineinfo', 'readonly', 'modified' ]
 	\       ],
-	\       'right': [ ]
+	\       'right': [
+	\           [ 'fileencoding' ],
+	\           [ 'filetype' ],
+	\           ['lineinfo' ]
 	\   },
 	\   'inactive': {
 	\       'left': [ [ 'relativepath', 'readonly', 'modified' ] ],
-	\       'right': [ ]
+	\       'right': [ 'filetype' ]
 	\   },
 	\   'component_function': {
 	\       'git_branch': 'FugitiveHead'
