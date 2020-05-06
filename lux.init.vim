@@ -112,7 +112,7 @@ let g:lightline = {
 	\   },
 	\   'inactive': {
 	\       'left': [ [ 'relativepath', 'readonly', 'modified' ] ],
-	\       'right': [ 'filetype' ]
+	\       'right': [ [ 'filetype' ] ]
 	\   },
 	\   'component_function': {
 	\       'git_branch': 'FugitiveHead'
