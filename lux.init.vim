@@ -104,7 +104,11 @@ let g:lightline = {
 	\           [ 'git_branch' ],
 	\           [ 'relativepath', 'readonly', 'modified' ]
 	\       ],
-	\       'right': [ ['lineinfo' ], [ 'filetype' ], [ 'fileencoding' ] ]
+	\       'right': [
+	\           [ 'fileencoding' ],
+	\           [ 'filetype' ],
+	\           ['lineinfo' ]
+	\       ]
 	\   },
 	\   'inactive': {
 	\       'left': [ [ 'relativepath', 'readonly', 'modified' ] ],
