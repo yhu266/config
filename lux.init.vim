@@ -105,9 +105,8 @@ let g:lightline = {
 	\           [ 'relativepath', 'readonly', 'modified' ]
 	\       ],
 	\       'right': [
-	\           [ 'fileencoding' ],
 	\           [ 'filetype' ],
-	\           ['lineinfo' ]
+	\           [ 'lineinfo' ]
 	\       ]
 	\   },
 	\   'inactive': {
