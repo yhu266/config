@@ -47,7 +47,6 @@ Plug 'preservim/nerdcommenter'
 Plug 'ctrlpvim/ctrlp.vim'
 Plug 'nanotech/jellybeans.vim'
 Plug 'itchyny/lightline.vim'
-Plug 'mengelbrecht/lightline-bufferline'
 Plug 'tmux-plugins/vim-tmux'
 Plug 'bfrg/vim-cuda-syntax'
 call plug#end()
