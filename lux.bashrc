@@ -20,3 +20,5 @@ module load slurm/18.08.4
 module load git/2.23.0
 module load openmpi/4.0.1-cuda
 module load cuda10.1/10.1.168
+
+# vi:ft=sh

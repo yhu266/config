@@ -4,7 +4,7 @@ autoload -Uz compinit
 compinit
 zstyle ':completion:*' matcher-list 'm:{a-z}={A-Za-z}'
 
-PS1='%~ >> '
+PS1='%2~ >> '
 
 alias clc='clear'
 alias l='clc; ls -Gal'

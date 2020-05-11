@@ -24,8 +24,6 @@ set shortmess=filnxtToOI
 set noexpandtab
 set tabstop=4
 set shiftwidth=4
-set number
-set relativenumber
 set background=dark
 set nolist
 set listchars=tab:>-
@@ -78,6 +76,7 @@ let NERDTreeShowHidden = 1
 let NERDTreeMinimalUI = 1
 let NERDTreeDirArrowExpandable = '+'
 let NERDTreeDirArrowCollapsible = '-'
+let NERDTreeWinSize = 39
 let g:NERDSpaceDelims = 1
 let g:ctrlp_working_path_mode = 'wa'
 let g:ctrlp_match_window = 'max:9'
