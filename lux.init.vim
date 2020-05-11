@@ -34,7 +34,7 @@ set wildignorecase
 set fileignorecase
 set nofoldenable
 set noshowmode
-set colorcolumn=79
+set colorcolumn=72
 set cursorline
 set conceallevel=0
 set diffopt+=vertical
