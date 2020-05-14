@@ -97,6 +97,19 @@ let g:lightline = {
 	\       'right': [ [ ] ]
 	\   },
 	\   'colorscheme': 'jellybeans',
+	\   'mode_map': {
+	\       'n': 'N',
+	\       'i': 'I',
+	\       'R': 'R',
+	\       'v': 'V',
+	\       'V': 'V-L',
+	\       "\<C-v>": 'V-B',
+	\       'c': 'C',
+	\       's': 'S',
+	\       'S': 'S-L',
+	\       "\<C-s>": 'S-B',
+	\       't': 'T'
+	\   },
 	\   'active': {
 	\       'left': [
 	\           [ 'mode', 'paste' ],
