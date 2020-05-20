@@ -21,6 +21,8 @@ set colorcolumn=80
 set cursorline
 set conceallevel=0
 set diffopt+=vertical
+set number
+set relativenumber
 map <Space> <Leader>
 inoremap jk <Esc>:wa<Cr>
 nnoremap j gjzz
