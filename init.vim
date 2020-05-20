@@ -17,7 +17,7 @@ set wildignorecase
 set fileignorecase
 set nofoldenable
 set noshowmode
-set colorcolumn=72
+set colorcolumn=80
 set cursorline
 set conceallevel=0
 set diffopt+=vertical
@@ -47,6 +47,11 @@ Plug 'nanotech/jellybeans.vim'
 Plug 'itchyny/lightline.vim'
 Plug 'tmux-plugins/vim-tmux'
 Plug 'bfrg/vim-cuda-syntax'
+if has('nvim') || has('patch-8.0.902')
+	Plug 'mhinz/vim-signify'
+else
+	Plug 'mhinz/vim-signify', { 'branch': 'legacy' }
+endif
 call plug#end()
 let NERDTreeCaseSensitiveSort = 1
 let NERDTreeNaturalSort = 1
@@ -118,3 +123,12 @@ let fortran_do_enddo = 1
 let fortran_free_source = 1
 au BufEnter,BufNew,BufRead *.h set ft=c
 au BufEnter,BufNew,BufRead *.hpp set ft=cpp
+set updatetime=100
+let g:signify_sign_add = '+'
+let g:signify_sign_delete = '-'
+let g:signify_sign_delete_first_line = '-'
+let g:signify_sign_change = '~'
+highlight SignColumn		ctermbg=NONE	cterm=NONE		guibg=NONE	gui=NONE
+highlight SignifySignAdd	ctermfg=green	guifg=#00ff00	cterm=NONE	gui=NONE
+highlight SignifySignDelete	ctermfg=red		guifg=#ff0000	cterm=NONE	gui=NONE
+highlight SignifySignChange	ctermfg=blue	guifg=#0000ff	cterm=NONE	gui=NONE
