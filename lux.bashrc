@@ -18,8 +18,9 @@ alias check="squeue --user=yhu266"
 
 module load slurm/18.08.4
 module load git/2.23.0
-module load openmpi/4.0.1-cuda
-module load cuda10.1/10.1.168
+# module load openmpi/4.0.1-cuda
+module load openmpi/4.0.1
+# module load cuda10.1/10.1.168
 module load hdf5_gnu/1.10.6-parallel
 
 # vi:ft=sh
