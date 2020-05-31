@@ -1,3 +1,5 @@
+set exrc
+set secure
 set t_Co=256
 set hlsearch
 set autoindent
@@ -23,6 +25,7 @@ set wildoptions="pum,tagfile"
 set shortmess=filnxtToOI
 set noexpandtab
 set tabstop=4
+set softtabstop=4
 set shiftwidth=4
 set background=dark
 set nolist
@@ -140,14 +143,13 @@ colorscheme jellybeans
 let fortran_more_precise = 1
 let fortran_do_enddo = 1
 let fortran_free_source = 1
-au BufEnter,BufNew,BufRead *.h set ft=c
-au BufEnter,BufNew,BufRead *.hpp set ft=cpp
 set updatetime=100
 let g:signify_sign_add = '+'
 let g:signify_sign_delete = '-'
 let g:signify_sign_delete_first_line = '-'
 let g:signify_sign_change = '~'
-highlight SignColumn		ctermbg=NONE	cterm=NONE		guibg=NONE	gui=NONE
-highlight SignifySignAdd	ctermfg=green	guifg=#00ff00	cterm=NONE	gui=NONE
-highlight SignifySignDelete	ctermfg=red		guifg=#ff0000	cterm=NONE	gui=NONE
-highlight SignifySignChange	ctermfg=blue	guifg=#0000ff	cterm=NONE	gui=NONE
+highlight SignColumn ctermbg=NONE cterm=NONE guibg=NONE gui=NONE
+highlight SignifySignAdd ctermfg=green guifg=#00ff00 cterm=NONE gui=NONE
+highlight SignifySignDelete ctermfg=red guifg=#ff0000 cterm=NONE gui=NONE
+highlight SignifySignChange ctermfg=blue guifg=#0000ff cterm=NONE gui=NONE
+autocmd BufRead,BufNewFile *.h,*.c set filetype=c
