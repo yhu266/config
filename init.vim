@@ -61,8 +61,8 @@ Plug 'majutsushi/tagbar'
 Plug 'preservim/nerdtree'
 Plug 'sjl/gundo.vim'
 Plug 'vim-syntastic/syntastic'
-Plug 'tmux-plugins/vim-tmux'
-Plug 'bfrg/vim-cuda-syntax'
+Plug 'tmux-plugins/vim-tmux', { 'for': 'tmux' }
+Plug 'bfrg/vim-cuda-syntax', { 'for': 'cuda' }
 Plug 'tpope/vim-fugitive'
 Plug 'mhinz/vim-signify'
 Plug 'itchyny/lightline.vim'
