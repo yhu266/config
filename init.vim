@@ -36,6 +36,10 @@ set diffopt+=vertical
 " key binding
 map <Space> <Leader>
 inoremap jk <Esc>:wa<Cr>
+nnoremap <Up> <Nop>
+nnoremap <Down> <Nop>
+nnoremap <Left> <Nop>
+nnoremap <Right> <Nop>
 nnoremap j gjzz
 nnoremap k gkzz
 nnoremap <Leader><Space> :nohlsearch<Cr>
@@ -125,6 +129,10 @@ let g:syntastic_always_populate_loc_list = 1
 let g:syntastic_auto_loc_list = 1
 let g:syntastic_check_on_open = 1
 let g:syntastic_check_on_wq = 0
+let g:syntastic_mode_map = {
+	\	'mode': 'active',
+	\	'passive_filetypes': [ 'rst', ],
+	\}
 
 " tmux-plugins/vim-tmux
 
