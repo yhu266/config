@@ -57,6 +57,7 @@ Plug 'tpope/vim-endwise'
 Plug 'jiangmiao/auto-pairs'
 Plug 'easymotion/vim-easymotion'
 Plug 'ctrlpvim/ctrlp.vim'
+Plug 'mileszs/ack.vim'
 Plug 'majutsushi/tagbar'
 Plug 'preservim/nerdtree'
 Plug 'sjl/gundo.vim'
@@ -99,6 +100,11 @@ let g:ctrlp_custom_ignore = {
 	\	'file': '\v\.(dat)$',
 	\	'link': '',
 	\}
+
+" mileszs/ack.vim
+cnoreabbrev Ack Ack!
+nnoremap <Leader>a :Ack!<Space>
+let g:ackprg = 'ag --vimgrep'
 
 " majutsushi/tagbar
 nnoremap <Leader>t :TagbarToggle<Cr>
