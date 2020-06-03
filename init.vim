@@ -63,6 +63,8 @@ Plug 'sjl/gundo.vim'
 Plug 'vim-syntastic/syntastic'
 Plug 'tmux-plugins/vim-tmux', { 'for': 'tmux' }
 Plug 'bfrg/vim-cuda-syntax', { 'for': 'cuda' }
+" Plug 'jiangxincode/mpi.vim'
+Plug 'yhu266/mpi.vim'
 Plug 'tpope/vim-fugitive'
 Plug 'mhinz/vim-signify'
 Plug 'itchyny/lightline.vim'
@@ -122,6 +124,8 @@ let g:gundo_help = 0
 let g:gundo_prefer_python3 = 1
 
 " vim-syntastic/syntastic
+let g:syntastic_c_config_file = ".syntastic_c_config"
+let g:syntastic_cuda_config_file = ".syntastic_cuda_config"
 set statusline+=%#warningmsg#
 set statusline+=%{SyntasticStatuslineFlag()}
 set statusline+=%*
@@ -136,6 +140,8 @@ let g:syntastic_mode_map = {
 " tmux-plugins/vim-tmux
 
 " bfrg/vim-cuda-syntax
+
+" jiangxincode/mpi.vim
 
 " tpope/vim-fugitive
 nnoremap <Leader>g :Git<Space>
